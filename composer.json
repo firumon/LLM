@@ -3,8 +3,8 @@
     "description": "Local Laundry Management",
     "type": "laravel-package",
     "require": {
-        "laravel/laravel": "dev-master",
-        "milestone/appframe": "dev-master"
+        "laravel/laravel": "5.8.*",
+        "milestone/appframe": "0.9.*"
     },
     "authors": [
         {
