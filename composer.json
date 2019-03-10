@@ -1,0 +1,16 @@
+{
+    "name": "firose/llm",
+    "description": "Local Laundry Management",
+    "type": "laravel-package",
+    "require": {
+        "laravel/laravel": "dev-master",
+        "milestone/appframe": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Firose Hussain",
+            "email": "github@firumon.com"
+        }
+    ],
+    "minimum-stability": "dev-master"
+}
