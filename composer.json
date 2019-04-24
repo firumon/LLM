@@ -1,5 +1,5 @@
 {
-    "name": "firose/llm",
+    "name": "firumon/llm",
     "description": "Local Laundry Management",
     "type": "laravel-package",
     "require": {
@@ -12,5 +12,17 @@
             "email": "github@firumon.com"
         }
     ],
-    "minimum-stability": "dev-master"
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Firumon\\LLM\\LLMServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Firumon\\LLM\\": "src/"
+        }
+    }
 }
