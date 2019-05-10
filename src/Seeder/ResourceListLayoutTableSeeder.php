@@ -86,6 +86,12 @@ class ResourceListLayoutTableSeeder extends Seeder
             ->create([	'id' => '2126168', 	'resource_list' => '2123120', 	'label' => 'Item', 	'field' => 'name', 	'relation' => '2109131', 											])
             ->create([	'id' => '2126169', 	'resource_list' => '2123120', 	'label' => 'Service', 	'field' => 'name', 	'relation' => '2109132', 											])
             ->create([	'id' => '2126170', 	'resource_list' => '2123120', 	'label' => 'Price', 	'field' => 'price_and_pl', 	'relation' => '2109133', 											])
+            ->create([	'id' => '2126171', 	'resource_list' => '2123121', 	'label' => 'Item', 	'field' => 'name', 	'relation' => '2109153', 											])
+            ->create([	'id' => '2126172', 	'resource_list' => '2123121', 	'label' => 'Services', 	'field' => 'name', 	'relation' => '2109156', 	'nest_relation1' => '2109159', 										])
+            ->create([	'id' => '2126173', 	'resource_list' => '2123121', 	'label' => 'Label', 	'field' => 'code', 	'relation' => '2109154', 											])
+            ->create([	'id' => '2126174', 	'resource_list' => '2123121', 	'label' => 'Shelf', 	'field' => 'hub_shelf_name', 	'relation' => '2109155', 											])
+            ->create([	'id' => '2126175', 	'resource_list' => '2123121', 	'label' => 'Delivery', 	'field' => 'delivery', 												])
+            ->create([	'id' => '2126176', 	'resource_list' => '2123121', 	'label' => 'Progress', 	'field' => 'progress', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
