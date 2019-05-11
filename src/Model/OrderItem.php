@@ -10,9 +10,10 @@ class OrderItem extends Model
     public function Item(){ return $this->belongsTo(Item::class,'item','id'); }
     public function Label(){ return $this->belongsTo(IdentityLabel::class,'label','id'); }
     public function Shelf(){ return $this->belongsTo(Shelf::class,'shelf','id'); }
-    public function Services(){ return $this->hasMany(OrderItemService::class,'oi','id'); }
+    public function OIS(){ return $this->hasMany(OrderItemService::class,'oi','id'); }
     public function Shifts(){ return $this->hasMany(HubShiftItem::class,'oi','id'); }
+    public function Services(){ return $this->belongsToMany(Service::class,'order_item_services','oi','service','id','id'); }
 
-    protected $appends = ['read_name'];
-    function getReadNameAttribute($value){ return implode("/",[$this->order,$this->Item->name]); }
+    protected $appends = ['name'];
+    function getNameAttribute(){ return implode("/",[$this->order,$this->Item->name]); }
 }

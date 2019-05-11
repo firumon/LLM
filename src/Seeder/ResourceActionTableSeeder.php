@@ -70,6 +70,8 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133152', 	'resource' => '2106109', 	'name' => 'AddServiceToItemAction', 		'title' => 'Add Service', 											])
             ->create([	'id' => '2133153', 	'resource' => '2106108', 	'name' => 'ServiceDiffPriceList', 		'title' => 'Prices', 											])
             ->create([	'id' => '2133154', 	'resource' => '2106118', 	'name' => 'OrderItemsListAction', 		'title' => 'View Items', 											])
+            ->create([	'id' => '2133155', 	'resource' => '2106119', 	'name' => 'OISListAction', 		'title' => 'Service Details', 											])
+            ->create([	'id' => '2133156', 	'resource' => '2106120', 	'name' => 'OISUListAction', 		'title' => 'User Progress', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

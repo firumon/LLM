@@ -8,5 +8,10 @@ class OrderItemService extends Model
 
     public function OrderItem(){ return $this->belongsTo(OrderItem::class,'oi','id'); }
     public function Service(){ return $this->belongsTo(Service::class,'service','id'); }
-    public function Users(){ return $this->hasMany(OrderItemServiceUser::class,'ois','id'); }
+    public function Assigned(){ return $this->hasMany(OrderItemServiceUser::class,'ois','id'); }
+    public function Users(){ return $this->belongsToMany(User::class,'order_item_service_user','ois','user'); }
+
+    protected $with = ['OrderItem','Service'];
+    protected $appends = ['name'];
+    public function getNameAttribute(){ return "{$this->OrderItem->name}/{$this->Service->name}"; }
 }
