@@ -18,11 +18,11 @@ class CreateOrderItemServiceUserTable extends Migration
             $table->foreignCascade('ois', 'order_item_services');
             $table->foreignNullable('user', 'users');
             $table->foreignNullable('assigned_by', 'users');
-            $table->dateTimeTz('assigned_on')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedBigInteger('start_at');
-            $table->unsignedBigInteger('end_at');
-            $table->unsignedBigInteger('service_time');
-            $table->unsignedBigInteger('total_time');
+            $table->unsignedBigInteger('assigned_on')->nullable()->default(0);
+            $table->unsignedBigInteger('start_at')->default(0);
+            $table->unsignedBigInteger('end_at')->default(0);
+            $table->unsignedBigInteger('service_time')->default(0);
+            $table->unsignedBigInteger('total_time')->default(0);
             $table->enum('status', ['Active','Inactive'])->nullable()->default('Active');
             $table->audit();
         });
