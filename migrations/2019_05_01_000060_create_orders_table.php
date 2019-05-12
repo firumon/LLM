@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->foreignNullable('pl', 'pricelist');
             $table->foreignNullable('user', 'users');
             $table->foreignNullable('hub', 'hubs');
-            $table->enum('progress', ['New','In Service','Service Completed','Delivered Partially','Delivered'])->nullable()->default('New');
+            $table->enum('progress', ['New','In Service','Service Completed','Ready To Deliver','Delivered Partially','Delivered'])->nullable()->default('New');
             $table->enum('status', ['Active','Inactive'])->nullable()->default('Active');
             $table->audit();
         });
