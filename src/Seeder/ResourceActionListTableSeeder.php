@@ -45,6 +45,7 @@ class ResourceActionListTableSeeder extends Seeder
             ->create([	'id' => '2136127', 	'resource_action' => '2133161', 	'resource_list' => '2123107', 													])
             ->create([	'id' => '2136128', 	'resource_action' => '2133154', 	'resource_list' => '2123125', 													])
             ->create([	'id' => '2136129', 	'resource_action' => '2133162', 	'resource_list' => '2123121', 													])
+            ->create([	'id' => '2136130', 	'resource_action' => '2133164', 	'resource_list' => '2123120', 													])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
