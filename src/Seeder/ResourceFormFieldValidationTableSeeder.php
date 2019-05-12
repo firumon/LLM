@@ -27,7 +27,7 @@ class ResourceFormFieldValidationTableSeeder extends Seeder
             ->create([	'id' => '2116109', 	'form_field' => '2111124', 	'rule' => 'required', 	'message' => 'Name Required', 												])
             ->create([	'id' => '2116110', 	'form_field' => '2111134', 	'rule' => 'required', 	'message' => 'Name Required', 												])
             ->create([	'id' => '2116111', 	'form_field' => '2111138', 	'rule' => 'required', 	'message' => 'Name Required', 												])
-            ->create([	'id' => '2116112', 	'form_field' => '2111146', 	'rule' => 'required', 	'message' => 'Name Required', 												])
+            ->create([	'id' => '2116112', 	'form_field' => '2111147', 	'rule' => 'required', 	'message' => 'Name Required', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

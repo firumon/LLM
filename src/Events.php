@@ -12,6 +12,7 @@
         private $bindings = [
             LLMEvents\LLMUserCreated::class => Listeners\AddUserToGroups::class,
             LLMEvents\EmployeeCreated::class => Listeners\AddUserToGroups::class,
+            LLMEvents\NewDefaultShelf::class => Listeners\DeleteAllDefaultShelfOfAHub::class,
         ];
 
         public static function Register(){
