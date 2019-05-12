@@ -15,9 +15,10 @@ class CreateItemServicesTable extends Migration
     {
         Schema::create('item_services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 128)->index();
+            $table->string('name', '128')->index();
             $table->foreignCascade('item', 'items');
             $table->foreignCascade('service', 'services');
+            $table->enum('status', ['Active','Inactive'])->nullable()->default('Active');
             $table->audit();
         });
     }
