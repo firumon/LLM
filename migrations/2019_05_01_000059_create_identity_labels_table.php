@@ -15,6 +15,7 @@ class CreateIdentityLabelsTable extends Migration
     {
         Schema::create('identity_labels', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->foreignNullable('hub', 'hubs');
             $table->string('code', '16')->index()->nullable();
             $table->unsignedBigInteger('current')->index()->nullable();
             $table->enum('status', ['Active','Inactive'])->nullable()->default('Active');
