@@ -5,6 +5,7 @@ namespace Firumon\LLM\Model;
 class OrderItem extends Model
 {
     protected $table = 'order_items';
+    protected $touches = ['Order','OIS'];
 
     public function Order(){ return $this->belongsTo(Order::class,'order','id'); }
     public function Item(){ return $this->belongsTo(Item::class,'item','id'); }
@@ -12,7 +13,7 @@ class OrderItem extends Model
     public function Shelf(){ return $this->belongsTo(Shelf::class,'shelf','id'); }
     public function OIS(){ return $this->hasMany(OrderItemService::class,'oi','id'); }
     public function Shifts(){ return $this->hasMany(HubShiftItem::class,'oi','id'); }
-    public function Services(){ return $this->belongsToMany(Service::class,'order_item_services','oi','service','id','id')->withPivot(['progress']); }
+    public function Services(){ return $this->belongsToMany(Service::class,'order_item_services','oi','service','id','id')->withTimestamps()->withPivot(['progress']); }
 
     protected $appends = ['name'];
     function getNameAttribute(){ return implode("/",[$this->order,$this->Item->name]); }

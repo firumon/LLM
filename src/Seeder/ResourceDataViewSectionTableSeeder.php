@@ -26,6 +26,9 @@ class ResourceDataViewSectionTableSeeder extends Seeder
             ->create([	'id' => '2131108', 	'resource_data' => '2128104', 	'title' => 'Providers', 		'relation' => '2109116', 											])
             ->create([	'id' => '2131109', 	'resource_data' => '2128104', 	'title' => 'Hubs', 		'relation' => '2109117', 											])
             ->create([	'id' => '2131110', 	'resource_data' => '2128104', 	'title' => 'Prices', 		'relation' => '2109119', 											])
+            ->create([	'id' => '2131111', 	'resource_data' => '2128105', 		'title_field' => 'name', 		'colspan' => '12', 										])
+            ->create([	'id' => '2131112', 	'resource_data' => '2128106', 		'title_field' => 'name', 		'colspan' => '12', 										])
+            ->create([	'id' => '2131113', 	'resource_data' => '2128106', 	'title' => 'Service Users', 		'relation' => '2109156', 	'colspan' => '12', 										])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

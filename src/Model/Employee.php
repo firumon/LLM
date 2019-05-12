@@ -15,7 +15,7 @@ class Employee extends LLMUser
     }
 
     protected $table = 'users';
-    static $_Groups = ['managers','service_providers'];
+    public static $_Groups = ['managers','service_providers'];
 
     protected $dispatchesEvents = [ 'created' => EmployeeCreated::class ];
 

@@ -44,6 +44,16 @@ class ResourceDataViewSectionItemTableSeeder extends Seeder
             ->create([	'id' => '2132126', 	'section' => '2131109', 	'label' => 'Phone', 	'attribute' => 'phone', 												])
             ->create([	'id' => '2132127', 	'section' => '2131110', 	'label' => 'Price List', 	'attribute' => 'name', 	'relation' => '2109143', 											])
             ->create([	'id' => '2132128', 	'section' => '2131110', 	'label' => 'Cost', 	'attribute' => 'price', 												])
+            ->create([	'id' => '2132129', 	'section' => '2131111', 	'label' => 'Hub', 	'attribute' => 'name', 	'relation' => '2109138', 											])
+            ->create([	'id' => '2132130', 	'section' => '2131111', 	'label' => 'Current Items', 	'attribute' => 'name', 	'relation' => '2109139', 											])
+            ->create([	'id' => '2132131', 	'section' => '2131111', 	'label' => 'Status', 	'attribute' => 'status', 												])
+            ->create([	'id' => '2132132', 	'section' => '2131112', 	'label' => 'Shelf', 	'attribute' => 'name', 	'relation' => '2109155', 											])
+            ->create([	'id' => '2132133', 	'section' => '2131112', 	'label' => 'Label', 	'attribute' => 'code', 	'relation' => '2109154', 											])
+            ->create([	'id' => '2132134', 	'section' => '2131112', 	'label' => 'Services', 	'attribute' => 'name', 	'relation' => '2109188', 											])
+            ->create([	'id' => '2132135', 	'section' => '2131112', 	'label' => 'Progress', 	'attribute' => 'progress', 												])
+            ->create([	'id' => '2132136', 	'section' => '2131113', 	'label' => 'Service', 	'attribute' => 'name', 	'relation' => '2109159', 											])
+            ->create([	'id' => '2132137', 	'section' => '2131113', 	'label' => 'Users', 	'attribute' => 'name', 	'relation' => '2109189', 											])
+            ->create([	'id' => '2132138', 	'section' => '2131113', 	'label' => 'Progress', 	'attribute' => 'progress', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

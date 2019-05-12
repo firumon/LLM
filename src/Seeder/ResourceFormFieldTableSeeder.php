@@ -74,7 +74,7 @@ class ResourceFormFieldTableSeeder extends Seeder
             ->create([	'id' => '2111156', 	'resource_form' => '2110118', 	'name' => 'service', 	'type' => 'multiselect', 	'label' => 'Select Service', 											])
             ->create([	'id' => '2111157', 	'resource_form' => '2110118', 	'name' => 'label', 	'type' => 'select', 	'label' => 'Attached Label', 											])
             ->create([	'id' => '2111158', 	'resource_form' => '2110118', 	'name' => 'shelf', 	'type' => 'select', 	'label' => 'Storage Shelf', 											])
-            ->create([	'id' => '2111159', 	'resource_form' => '2110118', 	'name' => 'delivery', 	'type' => 'text', 	'label' => 'Delivery Date', 											])
+            ->create([	'id' => '2111159', 	'resource_form' => '2110118', 	'name' => 'delivery', 	'type' => 'text', 	'label' => 'Delivery Date (yyyy-mm-dd)', 											])
             ->create([	'id' => '2111160', 	'resource_form' => '2110119', 	'name' => 'ois', 	'type' => 'select', 	'label' => 'Order Item Service', 											])
             ->create([	'id' => '2111161', 	'resource_form' => '2110119', 	'name' => 'user', 	'type' => 'select', 	'label' => 'Select Provider', 											])
             ->create([	'id' => '2111162', 	'resource_form' => '2110120', 	'name' => 'date', 	'type' => 'text', 	'label' => 'Enter date (yyyy-mm-dd)', 											])
@@ -90,6 +90,7 @@ class ResourceFormFieldTableSeeder extends Seeder
             ->create([	'id' => '2111172', 	'resource_form' => '2110124', 	'name' => 'name', 	'type' => 'text', 	'label' => 'Name', 											])
             ->create([	'id' => '2111173', 	'resource_form' => '2110124', 	'name' => 'email', 	'type' => 'text', 	'label' => 'Email', 											])
             ->create([	'id' => '2111174', 	'resource_form' => '2110124', 	'name' => 'password', 	'type' => 'password', 	'label' => 'Password', 											])
+            ->create([	'id' => '2111175', 	'resource_form' => '2110118', 	'name' => 'status', 	'type' => 'select', 	'label' => 'Status', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

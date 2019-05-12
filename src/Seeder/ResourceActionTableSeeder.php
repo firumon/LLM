@@ -72,6 +72,13 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133154', 	'resource' => '2106118', 	'name' => 'OrderItemsListAction', 		'title' => 'View Items', 											])
             ->create([	'id' => '2133155', 	'resource' => '2106119', 	'name' => 'OISListAction', 		'title' => 'Service Details', 											])
             ->create([	'id' => '2133156', 	'resource' => '2106120', 	'name' => 'OISUListAction', 		'title' => 'User Progress', 											])
+            ->create([	'id' => '2133157', 	'resource' => '2106104', 	'name' => 'EmployeeHubManageAction', 		'title' => 'Add/Remove Hubs', 											])
+            ->create([	'id' => '2133158', 	'resource' => '2106107', 	'name' => 'HubRecentOrderListAction', 		'title' => 'Recent Orders', 											])
+            ->create([	'id' => '2133159', 	'resource' => '2106113', 	'name' => 'ShelfDataAction', 		'title' => 'Shelf Details', 											])
+            ->create([	'id' => '2133160', 	'resource' => '2106113', 	'name' => 'UpdateShelfAction', 		'title' => 'Edit Detail', 											])
+            ->create([	'id' => '2133161', 	'resource' => '2106105', 	'name' => 'CustomerOrdersList', 		'title' => 'Orders', 											])
+            ->create([	'id' => '2133162', 	'resource' => '2106119', 	'name' => 'EditOrderItemAction', 		'title' => 'Edit Details', 											])
+            ->create([	'id' => '2133163', 	'resource' => '2106105', 	'name' => 'AddCutomerOrderAction', 		'title' => 'Add New Order', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

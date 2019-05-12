@@ -16,7 +16,6 @@ class Customer extends AppframeUser
     }
 
     protected $table = 'users';
-    //protected $dispatchesEvents = [ 'created' => CustomerCreated::class ];
     protected $with = ['Detail'];
 
     public function Orders(){ return $this->hasMany(Order::class,'customer','id'); }

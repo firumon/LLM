@@ -31,14 +31,14 @@ class ResourceFormFieldOptionTableSeeder extends Seeder
             ->create([	'id' => '2113113', 	'form_field' => '2111142', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113114', 	'form_field' => '2111145', 	'type' => 'Enum', 													])
             ->create([	'id' => '2113115', 	'form_field' => '2111147', 	'type' => 'Enum', 													])
-            ->create([	'id' => '2113116', 	'form_field' => '2111148', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
+            ->create([	'id' => '2113116', 	'form_field' => '2111148', 	'type' => 'List', 	'detail' => '2123107', 	'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113117', 	'form_field' => '2111150', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113118', 	'form_field' => '2111152', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113119', 	'form_field' => '2111153', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
-            ->create([	'id' => '2113120', 	'form_field' => '2111154', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'code', 										])
+            ->create([	'id' => '2113120', 	'form_field' => '2111154', 	'type' => 'List', 	'detail' => '2123124', 	'value_attr' => 'id', 	'label_attr' => 'code', 										])
             ->create([	'id' => '2113121', 	'form_field' => '2111155', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113122', 	'form_field' => '2111156', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
-            ->create([	'id' => '2113123', 	'form_field' => '2111157', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
+            ->create([	'id' => '2113123', 	'form_field' => '2111157', 	'type' => 'List', 	'detail' => '2123113', 	'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113124', 	'form_field' => '2111158', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113125', 	'form_field' => '2111160', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'service', 										])
             ->create([	'id' => '2113126', 	'form_field' => '2111161', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
@@ -48,6 +48,7 @@ class ResourceFormFieldOptionTableSeeder extends Seeder
             ->create([	'id' => '2113130', 	'form_field' => '2111168', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113131', 	'form_field' => '2111169', 	'type' => 'Foreign', 		'value_attr' => 'id', 	'label_attr' => 'name', 										])
             ->create([	'id' => '2113132', 	'form_field' => '2111171', 	'type' => 'Enum', 													])
+            ->create([	'id' => '2113133', 	'form_field' => '2111175', 	'type' => 'Enum', 													])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
