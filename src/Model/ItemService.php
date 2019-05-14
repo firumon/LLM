@@ -15,7 +15,7 @@ class ItemService extends Model
 
     public function Item(){ return $this->belongsTo(Item::class,'item','id'); }
     public function Service(){ return $this->belongsTo(Service::class,'service','id'); }
-    public function Price(){ return $this->hasMany(PricelistContent::class,'is','id'); }
+    public function Price(){ return $this->hasMany(PricelistContent::class,'is','id')->activePL(); }
 
     protected $touches = ['Item'];
 }

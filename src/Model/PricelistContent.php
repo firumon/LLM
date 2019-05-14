@@ -10,6 +10,8 @@ class PricelistContent extends Model
     public function Pricelist(){ return $this->belongsTo(Pricelist::class,'pl','id'); }
     public function ItemService(){ return $this->belongsTo(ItemService::class,'is','id'); }
 
+    public function scopeActivePL($Q){ $Q->whereHas('Pricelist',function($q){ $q->where('status','Active'); }); }
+
     protected $with = ['Pricelist'];
     protected $appends = ['price_and_pl'];
 
