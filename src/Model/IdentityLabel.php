@@ -6,6 +6,7 @@ class IdentityLabel extends Model
 {
     protected $table = 'identity_labels';
 
+    public function Hub(){ return $this->belongsTo(Hub::class,'hub','id'); }
     public function Item(){ return $this->hasOne(OrderItem::class,'label','id'); }
 
     public function scopeAvailable($Q){ return $Q->whereNull('current'); }

@@ -22,7 +22,7 @@ class ResourceFormTableSeeder extends Seeder
             ->create([	'id' => '2110104', 	'resource' => '2106105', 	'name' => 'NewCustomerForm', 		'title' => 'Customer', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110105', 	'resource' => '2106107', 	'name' => 'NewHubCreateFrom', 		'title' => 'Hubs', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110106', 	'resource' => '2106108', 	'name' => 'AddNewServiceForm', 		'title' => 'Service', 	'action_text' => 'Save', 										])
-            ->create([	'id' => '2110107', 	'resource' => '2106109', 	'name' => 'AddNewItemForm', 		'title' => 'Item', 	'action_text' => 'Save', 										])
+            ->create([	'id' => '2110107', 	'resource' => '2106109', 	'name' => 'AddNewItemForm', 		'title' => 'New Item', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110108', 	'resource' => '2106110', 	'name' => 'AddServicesToItemForm', 		'title' => 'Item Service', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110109', 	'resource' => '2106110', 	'name' => 'UpdateItemsService', 		'title' => 'Item Service', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110110', 	'resource' => '2106113', 	'name' => 'CreateNewShelfForm', 		'title' => 'Shelf', 	'action_text' => 'Save', 										])
@@ -41,6 +41,7 @@ class ResourceFormTableSeeder extends Seeder
             ->create([	'id' => '2110123', 	'resource' => '2106127', 	'name' => 'NewHubShiftProcessForm', 		'title' => 'Hub Shift', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110124', 	'resource' => '2106104', 	'name' => 'UpdateEmployeeDetails', 		'title' => 'Edit Employee Details', 	'action_text' => 'Update Details', 										])
             ->create([	'id' => '2110125', 	'resource' => '2106115', 	'name' => 'EditPricelistForm', 		'title' => 'Edit', 	'action_text' => 'Update', 										])
+            ->create([	'id' => '2110126', 	'resource' => '2106109', 	'name' => 'EditItemForm', 		'title' => 'Edit Item', 	'action_text' => 'Update Item', 										])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

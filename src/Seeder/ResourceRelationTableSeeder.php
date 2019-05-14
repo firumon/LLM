@@ -107,6 +107,7 @@ class ResourceRelationTableSeeder extends Seeder
             ->create([	'id' => '2109189', 	'resource' => '2106120', 	'name' => 'Users', 	'description' => 'List of users responsible to provide service', 	'method' => 'Users', 	'type' => 'belongsToMany', 	'relate_resource' => '2106102', 									])
             ->create([	'id' => '2109190', 	'resource' => '2106123', 	'name' => 'AssignedBy', 	'description' => 'The user who assigned this service to a provider', 	'method' => 'AssignedBy', 	'type' => 'belongsTo', 	'relate_resource' => '2106102', 									])
             ->create([	'id' => '2109191', 	'resource' => '2106109', 	'name' => 'ItemsServiceList', 	'description' => 'List all services applicable on item', 	'method' => 'Services', 	'type' => 'belongsToMany', 	'relate_resource' => '2106108', 									])
+            ->create([	'id' => '2109192', 	'resource' => '2106117', 	'name' => 'LabelParentHub', 	'description' => 'Hub detail where the label belongs to', 	'method' => 'Hub', 	'type' => 'belongsTo', 	'relate_resource' => '2106107', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

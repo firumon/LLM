@@ -23,6 +23,9 @@ class ResourceFormLayoutTableSeeder extends Seeder
             ->create([	'id' => '2118105', 	'resource_form' => '2110105', 	'form_field' => '2111118', 	'colspan' => '4', 												])
             ->create([	'id' => '2118106', 	'resource_form' => '2110105', 	'form_field' => '2111119', 	'colspan' => '4', 												])
             ->create([	'id' => '2118107', 	'resource_form' => '2110105', 	'form_field' => '2111120', 	'colspan' => '4', 												])
+            ->create([	'id' => '2118108', 	'resource_form' => '2110126', 	'form_field' => '2111180', 	'colspan' => '7', 												])
+            ->create([	'id' => '2118109', 	'resource_form' => '2110126', 	'form_field' => '2111181', 	'colspan' => '5', 												])
+            ->create([	'id' => '2118110', 	'resource_form' => '2110126', 	'form_field' => '2111182', 	'colspan' => '12', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
