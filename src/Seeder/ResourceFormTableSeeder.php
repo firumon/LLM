@@ -40,6 +40,7 @@ class ResourceFormTableSeeder extends Seeder
             ->create([	'id' => '2110122', 	'resource' => '2106126', 	'name' => 'AddDeliveryItemsForm', 		'title' => 'Delivery Contents', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110123', 	'resource' => '2106127', 	'name' => 'NewHubShiftProcessForm', 		'title' => 'Hub Shift', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110124', 	'resource' => '2106104', 	'name' => 'UpdateEmployeeDetails', 		'title' => 'Edit Employee Details', 	'action_text' => 'Update Details', 										])
+            ->create([	'id' => '2110125', 	'resource' => '2106115', 	'name' => 'EditPricelistForm', 		'title' => 'Edit', 	'action_text' => 'Update', 										])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
