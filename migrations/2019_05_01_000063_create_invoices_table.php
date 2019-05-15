@@ -17,7 +17,7 @@ class CreateInvoicesTable extends Migration
             $table->bigIncrements('id');
             $table->foreignCascade('order', 'orders');
             $table->foreignNullable('customer', 'users');
-            $table->dateTimeTz('date')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->date('date')->nullable();
             $table->enum('progress', ['Unpaid','Paid Partially','Paid'])->nullable()->default('Unpaid');
             $table->enum('status', ['Active','Inactive'])->nullable()->default('Active');
             $table->audit();
