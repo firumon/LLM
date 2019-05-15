@@ -22,6 +22,7 @@ class Order extends Model
     public function Invoice(){ return $this->hasOne(Invoice::class,'order','id'); }
     public function Deliveries(){ return $this->hasMany(Delivery::class,'order','id'); }
     public function Receipts(){ return $this->hasManyThrough(Receipt::class,Invoice::class,'order','invoice','id','id'); }
+    public function OIS(){ return $this->hasManyThrough(OrderItemService::class, OrderItem::class, 'order','oi','id','id' ); }
 
     public function scopeRecent($Q){ return $Q->where('date','>=',date('Y-m-d',strtotime(static::$recentDuration))); }
     public function scopeUndelivered($Q){ return $Q->whereNot('progress','Delivered'); }
