@@ -13,6 +13,8 @@
             LLMEvents\LLMUserCreated::class => Listeners\AddUserToGroups::class,
             LLMEvents\EmployeeCreated::class => Listeners\AddUserToGroups::class,
             LLMEvents\NewDefaultShelf::class => Listeners\DeleteAllDefaultShelfOfAHub::class,
+            LLMEvents\OrderSaving::class => Listeners\UpdateInvoiceItemPricesIfPLChanged::class,
+            //LLMEvents\OrderSaved::class => Listeners\CreateInvoiceForOrder::class,
         ];
 
         public static function Register(){
