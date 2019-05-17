@@ -9,4 +9,7 @@ use Milestone\Appframe\Model\User as AppframeUser;
 class CustomerDetail extends AppframeUser
 {
     protected $table = 'customer_details';
+    protected $touches = ['Customer'];
+
+    public function Customer(){ return $this->belongsTo(Customer::class,'customer','id'); }
 }

@@ -41,6 +41,8 @@ class ResourceListTableSeeder extends Seeder
             ->create([	'id' => '2123123', 	'resource' => '2106123', 	'name' => 'OISUList', 		'title' => 'OIS Users', 	'identity' => 'name', 	'items_per_page' => '30', 									])
             ->create([	'id' => '2123124', 	'resource' => '2106117', 	'name' => 'AvailableLabelsList', 		'title' => 'Available Labels', 	'identity' => 'code', 	'items_per_page' => '30', 									])
             ->create([	'id' => '2123125', 	'resource' => '2106118', 	'name' => 'RecentOrderList', 		'title' => 'Recent Orders', 	'identity' => 'id', 	'items_per_page' => '30', 									])
+            ->create([	'id' => '2123126', 	'resource' => '2106122', 	'name' => 'InvoiceItemsList', 		'title' => 'Invoice Items', 	'identity' => 'invoice', 	'items_per_page' => '30', 									])
+            ->create([	'id' => '2123127', 	'resource' => '2106121', 	'name' => 'PendingInvoiceList', 		'title' => 'Pending Invoices', 	'identity' => 'id', 	'items_per_page' => '30', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

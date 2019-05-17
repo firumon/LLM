@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 class Invoice extends Model
 {
     protected $table = 'invoices';
+    protected $with = ['Customer'];
 
     protected static function boot(){
         parent::boot();
@@ -17,5 +18,11 @@ class Invoice extends Model
     public function Customer(){ return $this->belongsTo(User::class,'customer','id'); }
     public function Items(){ return $this->hasMany(InvoiceItem::class,'invoice','id'); }
     public function Receipts(){ return $this->hasMany(Receipt::class,'invoice','id'); }
+
+    public function scopePending($Q){ return $Q->where('progress',"!=",'Paid'); }
+
+    protected $appends = ['total','name'];
+    public function getTotalAttribute(){ return $this->Items->sum('price'); }
+    public function getNameAttribute(){ return implode('/',[$this->id,$this->Customer->name,$this->order,$this->date]); }
 
 }

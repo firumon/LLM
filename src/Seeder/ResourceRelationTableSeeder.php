@@ -98,7 +98,7 @@ class ResourceRelationTableSeeder extends Seeder
             ->create([	'id' => '2109180', 	'resource' => '2106128', 	'name' => 'HubShift', 	'description' => 'Primary shift detail of a hub shift item', 	'method' => 'Shift', 	'type' => 'belongsTo', 	'relate_resource' => '2106127', 									])
             ->create([	'id' => '2109181', 	'resource' => '2106128', 	'name' => 'ShiftItem', 	'description' => 'Detail of order item', 	'method' => 'Item', 	'type' => 'belongsTo', 	'relate_resource' => '2106119', 									])
             ->create([	'id' => '2109182', 	'resource' => '2106105', 	'name' => 'CustomerOrders', 	'description' => 'List of orders the customer placed', 	'method' => 'Orders', 	'type' => 'hasMany', 	'relate_resource' => '2106118', 									])
-            ->create([	'id' => '2109183', 	'resource' => '2106105', 	'name' => 'CustomerInvoices', 	'description' => 'List of invoices created for the customer', 	'method' => 'Invoice', 	'type' => 'hasMany', 	'relate_resource' => '2106121', 									])
+            ->create([	'id' => '2109183', 	'resource' => '2106105', 	'name' => 'CustomerInvoices', 	'description' => 'List of invoices created for the customer', 	'method' => 'Invoices', 	'type' => 'hasMany', 	'relate_resource' => '2106121', 									])
             ->create([	'id' => '2109184', 	'resource' => '2106105', 	'name' => 'CustomerReceipts', 	'description' => 'Receipts created for the customer', 	'method' => 'Receipts', 	'type' => 'hasManyThrough', 	'relate_resource' => '2106124', 									])
             ->create([	'id' => '2109185', 	'resource' => '2106105', 	'name' => 'CustomerDetail', 	'description' => 'Extra details of a customer', 	'method' => 'Detail', 	'type' => 'hasOne', 	'relate_resource' => '2106106', 									])
             ->create([	'id' => '2109186', 	'resource' => '2106105', 	'name' => 'CustomerGroup', 	'description' => 'The details of group a customer belongs to', 	'method' => 'Groups', 	'type' => 'belongsToMany', 	'relate_resource' => '2106101', 									])
@@ -108,6 +108,7 @@ class ResourceRelationTableSeeder extends Seeder
             ->create([	'id' => '2109190', 	'resource' => '2106123', 	'name' => 'AssignedBy', 	'description' => 'The user who assigned this service to a provider', 	'method' => 'AssignedBy', 	'type' => 'belongsTo', 	'relate_resource' => '2106102', 									])
             ->create([	'id' => '2109191', 	'resource' => '2106109', 	'name' => 'ItemsServiceList', 	'description' => 'List all services applicable on item', 	'method' => 'Services', 	'type' => 'belongsToMany', 	'relate_resource' => '2106108', 									])
             ->create([	'id' => '2109192', 	'resource' => '2106117', 	'name' => 'LabelParentHub', 	'description' => 'Hub detail where the label belongs to', 	'method' => 'Hub', 	'type' => 'belongsTo', 	'relate_resource' => '2106107', 									])
+            ->create([	'id' => '2109193', 	'resource' => '2106118', 	'name' => 'OrderPricelist', 	'description' => 'The pricelist applied to a order', 	'method' => 'Pricelist', 	'type' => 'belongsTo', 	'relate_resource' => '2106115', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

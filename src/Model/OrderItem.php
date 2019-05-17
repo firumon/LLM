@@ -2,16 +2,11 @@
 
 namespace Firumon\LLM\Model;
 
-use Firumon\LLM\Events\OrderItemSaving;
 
 class OrderItem extends Model
 {
     protected $table = 'order_items';
     protected $touches = ['Order','OIS'];
-
-    protected $dispatchesEvents = [
-        //'saving' => OrderItemSaving::class,
-    ];
 
     public function Order(){ return $this->belongsTo(Order::class,'order','id'); }
     public function Item(){ return $this->belongsTo(Item::class,'item','id'); }

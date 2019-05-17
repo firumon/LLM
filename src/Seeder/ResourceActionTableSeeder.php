@@ -84,6 +84,13 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133166', 	'resource' => '2106115', 	'name' => 'UpdatePricelistAction', 		'title' => 'Edit', 											])
             ->create([	'id' => '2133167', 	'resource' => '2106109', 	'name' => 'UpdateItemAction', 		'title' => 'Edit', 											])
             ->create([	'id' => '2133168', 	'resource' => '2106118', 	'name' => 'UpdateOrderAction', 		'title' => 'Update', 											])
+            ->create([	'id' => '2133169', 	'resource' => '2106118', 	'name' => 'OrderInvoiceListAction', 		'title' => 'Invoice', 											])
+            ->create([	'id' => '2133170', 	'resource' => '2106105', 	'name' => 'CustomerInvoicesListAction', 		'title' => 'All Invoices', 											])
+            ->create([	'id' => '2133171', 	'resource' => '2106121', 	'name' => 'InvoiceItemsListAction', 		'title' => 'Items', 											])
+            ->create([	'id' => '2133172', 	'resource' => '2106121', 	'name' => 'PendingInvoiceList', 		'title' => 'Pending Invoices', 		'menu' => 'Pending', 									])
+            ->create([	'id' => '2133173', 	'resource' => '2106105', 	'name' => 'CustomerPendingInvoices', 		'title' => 'Pending Invoices', 											])
+            ->create([	'id' => '2133174', 	'resource' => '2106121', 	'name' => 'InvoiceAddReceiptAction', 		'title' => 'Add Receipt', 											])
+            ->create([	'id' => '2133175', 	'resource' => '2106121', 	'name' => 'InvoiceReceiptsList', 		'title' => 'View Receipts', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

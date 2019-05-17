@@ -17,6 +17,9 @@ class Order extends Model
         'saved' => OrderSaved::class
     ];
 
+    protected $dates = ['date'];
+    protected $casts = ['date' => 'date:Y-m-d'];
+
     protected static function boot(){
         parent::boot();
         static::addGlobalScope('active',function(Builder $builder){ $builder->where(function($Q){ $Q->where(DB::raw('`orders`.`status`'),'Active'); }); });
@@ -30,6 +33,7 @@ class Order extends Model
     public function Deliveries(){ return $this->hasMany(Delivery::class,'order','id'); }
     public function Receipts(){ return $this->hasManyThrough(Receipt::class,Invoice::class,'order','invoice','id','id'); }
     public function OIS(){ return $this->hasManyThrough(OrderItemService::class, OrderItem::class, 'order','oi','id','id' ); }
+    public function Pricelist(){ return $this->belongsTo(Pricelist::class,'pl','id'); }
 
     public function scopeRecent($Q){ return $Q->where('date','>=',date('Y-m-d',strtotime(static::$recentDuration))); }
     public function scopeUndelivered($Q){ return $Q->whereNot('progress','Delivered'); }

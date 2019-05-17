@@ -3,11 +3,8 @@
 namespace Firumon\LLM\Listeners;
 
 use Firumon\LLM\Events\OrderSaving;
-use Firumon\LLM\Model\Invoice;
 use Firumon\LLM\Model\Order;
 use Firumon\LLM\Model\Pricelist;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Arr;
 
 class UpdateInvoiceItemPricesIfPLChanged
