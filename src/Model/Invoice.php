@@ -21,8 +21,10 @@ class Invoice extends Model
 
     public function scopePending($Q){ return $Q->where('progress',"!=",'Paid'); }
 
-    protected $appends = ['total','name'];
+    protected $appends = ['total','name','paid'];
+
     public function getTotalAttribute(){ return $this->Items->sum('price'); }
+    public function getPaidAttribute(){ return $this->Receipts->sum('amount'); }
     public function getNameAttribute(){ return implode('/',[$this->id,$this->Customer->name,$this->order,$this->date]); }
 
 }
