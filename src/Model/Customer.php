@@ -4,7 +4,6 @@ namespace Firumon\LLM\Model;
 
 use Illuminate\Database\Eloquent\Builder;
 use Milestone\Appframe\Model\GroupUser;
-use Milestone\Appframe\Model\User;
 
 class Customer extends User
 {
