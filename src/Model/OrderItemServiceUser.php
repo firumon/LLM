@@ -7,8 +7,8 @@ class OrderItemServiceUser extends Model
     protected $table = 'order_item_service_user';
 
     public function OIS(){ return $this->belongsTo(OrderItemService::class,'ois','id'); }
-    public function User(){ return $this->belongsTo(User::class,'user','id'); }
-    public function AssignedBy(){ return $this->belongsTo(User::class,'assigned_by','id'); }
+    public function User(){ return $this->belongsTo(Employee::class,'user','id'); }
+    public function AssignedBy(){ return $this->belongsTo(LLMUser::class,'assigned_by','id'); }
 
     protected $with = ['OIS','User','AssignedBy'];
     protected $appends = ['name','assigned'];

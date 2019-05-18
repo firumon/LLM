@@ -15,11 +15,12 @@ class Invoice extends Model
     }
 
     public function Order(){ return $this->belongsTo(Order::class,'order','id'); }
-    public function Customer(){ return $this->belongsTo(User::class,'customer','id'); }
+    public function Customer(){ return $this->belongsTo(LLMUser::class,'customer','id'); }
     public function Items(){ return $this->hasMany(InvoiceItem::class,'invoice','id'); }
     public function Receipts(){ return $this->hasMany(Receipt::class,'invoice','id'); }
 
     public function scopePending($Q){ return $Q->where('progress',"!=",'Paid'); }
+    public function scopePaid($Q){ return $Q->where('progress','Paid'); }
 
     protected $appends = ['total','name','paid'];
 

@@ -6,7 +6,7 @@ class Service extends Model
 {
     protected $table = 'services';
 
-    public function Providers(){ return $this->belongsToMany(User::class,'user_services','service','user','id','id')->withTimestamps(); }
+    public function Providers(){ return $this->belongsToMany(Employee::class,'user_services','service','user','id','id')->withTimestamps(); }
     public function Hubs(){ return $this->hasManyThrough(HubUser::class, UserService::class,'service','user','id','user')->with(['Hub']); }
     public function Items(){ return $this->belongsToMany(Item::class,'item_services','service','item','id','id')->withPivot(['name'])->withTimestamps(); }
     public function Prices(){ return $this->belongsToMany(PricelistContent::class,'item_services','service','id','id','is')->withPivot(['name','item']); }

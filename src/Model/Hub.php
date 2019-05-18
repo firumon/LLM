@@ -16,7 +16,7 @@ class Hub extends Model
 
     protected $table = 'hubs';
 
-    public function Users(){ return $this->belongsToMany(User::class,'hub_users', 'hub','user')->withTimestamps(); }
+    public function Users(){ return $this->belongsToMany(LLMUser::class,'hub_users', 'hub','user')->withTimestamps(); }
     public function HubUsers(){ return $this->hasMany(HubUser::class,'hub', 'id'); }
     public function Services(){ return $this->hasManyThrough(UserService::class,HubUser::class,'hub','user','id','user')->with(['Service']); }
     public function Shelves(){ return $this->hasMany(Shelf::class,'hub', 'id'); }

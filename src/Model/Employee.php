@@ -21,7 +21,11 @@ class Employee extends LLMUser
 
     public function scopeManagers($Q){ return $Q->whereHas('Groups',function($q){ $q->where('name','managers'); }); }
     public function scopeProviders($Q){ return $Q->whereHas('Groups',function($q){ $q->where('name','service_providers'); }); }
-    public function scopeMyHubProviders($Q){ return $Q->providers()->whereHas('Hubs',function($q){ $q->whereIn('id',LLMUser::find(request()->user()->id)->Hubs->map->id->toArray()); }); }
+    public function scopeMyHubProviders($Q){
+        return (request()->user()->Groups->contains('name','owners'))
+            ? $Q->providers()
+            : $Q->providers()->whereHas('Hubs',function($q){ $q->whereIn('id',LLMUser::find(request()->user()->id)->Hubs->map->id->toArray()); });
+    }
 
     public function Services(){ return $this->belongsToMany(Service::class,'user_services','user','service')->withTimestamps(); }
     public function GroupsDisplayable(){ return $this->belongsToMany(Group::class,'__group_users','user','group')->employeeGroups(); }
