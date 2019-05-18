@@ -91,6 +91,9 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133173', 	'resource' => '2106105', 	'name' => 'CustomerPendingInvoices', 		'title' => 'Pending Invoices', 											])
             ->create([	'id' => '2133174', 	'resource' => '2106121', 	'name' => 'InvoiceAddReceiptAction', 		'title' => 'Add Receipt', 											])
             ->create([	'id' => '2133175', 	'resource' => '2106121', 	'name' => 'InvoiceReceiptsList', 		'title' => 'View Receipts', 											])
+            ->create([	'id' => '2133176', 	'resource' => '2106120', 	'name' => 'OISListAction', 				'menu' => 'Order Item Services', 									])
+            ->create([	'id' => '2133177', 	'resource' => '2106121', 	'name' => 'PaidInvoiceListAction', 				'menu' => 'Paid', 									])
+            ->create([	'id' => '2133178', 	'resource' => '2106120', 	'name' => 'OISAssignUsersAction', 		'title' => 'Assign Providers', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

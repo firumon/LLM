@@ -23,6 +23,7 @@ class ResourceListScopeTableSeeder extends Seeder
             ->create([	'id' => '2124105', 	'resource_list' => '2123124', 	'scope' => '2108106', 													])
             ->create([	'id' => '2124106', 	'resource_list' => '2123125', 	'scope' => '2108107', 													])
             ->create([	'id' => '2124107', 	'resource_list' => '2123127', 	'scope' => '2108111', 													])
+            ->create([	'id' => '2124108', 	'resource_list' => '2123128', 	'scope' => '2108112', 													])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

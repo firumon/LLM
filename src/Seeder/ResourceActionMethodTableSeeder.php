@@ -91,6 +91,9 @@ class ResourceActionMethodTableSeeder extends Seeder
             ->create([	'id' => '2134173', 	'resource_action' => '2133173', 	'type' => 'ListRelation', 	'idn1' => '2109183', 	'idn2' => '2123127', 											])
             ->create([	'id' => '2134174', 	'resource_action' => '2133174', 	'type' => 'AddRelation', 	'idn1' => '2109164', 	'idn2' => '2110120', 	'idn3' => '2111165', 										])
             ->create([	'id' => '2134175', 	'resource_action' => '2133175', 	'type' => 'ListRelation', 	'idn1' => '2109164', 	'idn2' => '2123116', 											])
+            ->create([	'id' => '2134176', 	'resource_action' => '2133176', 	'type' => 'List', 	'idn1' => '2123122', 												])
+            ->create([	'id' => '2134177', 	'resource_action' => '2133177', 	'type' => 'List', 	'idn1' => '2123128', 												])
+            ->create([	'id' => '2134178', 	'resource_action' => '2133178', 	'type' => 'AddRelation', 	'idn1' => '2109160', 	'idn2' => '2110119', 	'idn3' => '2111162', 										])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

@@ -26,7 +26,8 @@ class ResourceScopeTableSeeder extends Seeder
             ->create([	'id' => '2108108', 	'resource' => '2106118', 	'name' => 'Undelivered', 	'description' => 'The orders whose progress is not delivered', 	'method' => 'undelivered', 											])
             ->create([	'id' => '2108109', 	'resource' => '2106118', 	'name' => 'Processing', 	'description' => 'The orders whose progress is in service', 	'method' => 'processing', 											])
             ->create([	'id' => '2108110', 	'resource' => '2106116', 	'name' => 'ActivePL', 	'description' => 'Content which has active price list master', 	'method' => 'activePL', 											])
-            ->create([	'id' => '2108111', 	'resource' => '2106121', 	'name' => 'PendingInvoices', 	'description' => 'Invoices which are not pain', 	'method' => 'pending', 											])
+            ->create([	'id' => '2108111', 	'resource' => '2106121', 	'name' => 'PendingInvoices', 	'description' => 'Invoices which are not paid', 	'method' => 'pending', 											])
+            ->create([	'id' => '2108112', 	'resource' => '2106121', 	'name' => 'PaidInvoices', 	'description' => 'Invoices which are paid', 	'method' => 'paid', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

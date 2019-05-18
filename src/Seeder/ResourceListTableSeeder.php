@@ -30,7 +30,7 @@ class ResourceListTableSeeder extends Seeder
             ->create([	'id' => '2123112', 	'resource' => '2106115', 	'name' => 'PriceList', 		'title' => 'Price List', 	'identity' => 'name', 	'items_per_page' => '10', 									])
             ->create([	'id' => '2123113', 	'resource' => '2106117', 	'name' => 'IdentityLabelList', 		'title' => 'Identity Labels', 	'identity' => 'code', 	'items_per_page' => '50', 									])
             ->create([	'id' => '2123114', 	'resource' => '2106118', 	'name' => 'OrderList', 		'title' => 'Orders', 	'identity' => 'id', 	'items_per_page' => '30', 									])
-            ->create([	'id' => '2123115', 	'resource' => '2106121', 	'name' => 'InvoiceList', 		'title' => 'Invoices', 	'identity' => 'id', 	'items_per_page' => '30', 									])
+            ->create([	'id' => '2123115', 	'resource' => '2106121', 	'name' => 'InvoiceList', 		'title' => 'All Invoices', 	'identity' => 'id', 	'items_per_page' => '30', 									])
             ->create([	'id' => '2123116', 	'resource' => '2106124', 	'name' => 'ReceiptList', 		'title' => 'Receipts', 	'identity' => 'id', 	'items_per_page' => '30', 									])
             ->create([	'id' => '2123117', 	'resource' => '2106125', 	'name' => 'DeliveryList', 		'title' => 'Deliveries', 	'identity' => 'id', 	'items_per_page' => '20', 									])
             ->create([	'id' => '2123118', 	'resource' => '2106127', 	'name' => 'HubShiftList', 		'title' => 'Hub Shifts', 	'identity' => 'id', 	'items_per_page' => '30', 									])
@@ -43,6 +43,7 @@ class ResourceListTableSeeder extends Seeder
             ->create([	'id' => '2123125', 	'resource' => '2106118', 	'name' => 'RecentOrderList', 		'title' => 'Recent Orders', 	'identity' => 'id', 	'items_per_page' => '30', 									])
             ->create([	'id' => '2123126', 	'resource' => '2106122', 	'name' => 'InvoiceItemsList', 		'title' => 'Invoice Items', 	'identity' => 'invoice', 	'items_per_page' => '30', 									])
             ->create([	'id' => '2123127', 	'resource' => '2106121', 	'name' => 'PendingInvoiceList', 		'title' => 'Pending Invoices', 	'identity' => 'id', 	'items_per_page' => '30', 									])
+            ->create([	'id' => '2123128', 	'resource' => '2106121', 	'name' => 'PaidInvoiceList', 		'title' => 'Paid Invoices', 	'identity' => 'id', 	'items_per_page' => '30', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

@@ -34,7 +34,7 @@ class ResourceFormTableSeeder extends Seeder
             ->create([	'id' => '2110116', 	'resource' => '2106118', 	'name' => 'NewOrderForm', 		'title' => 'Order', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110117', 	'resource' => '2106119', 	'name' => 'AddOrderItemForm', 		'title' => 'Order Items', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110118', 	'resource' => '2106119', 	'name' => 'UpdateOrderItem', 		'title' => 'Order Items', 	'action_text' => 'Save', 										])
-            ->create([	'id' => '2110119', 	'resource' => '2106123', 	'name' => 'AssignProviderToOIS', 		'title' => 'Order Item Service Providers', 	'action_text' => 'Save', 										])
+            ->create([	'id' => '2110119', 	'resource' => '2106123', 	'name' => 'AssignProviderToOIS', 		'title' => 'Add Provider to OIS', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110120', 	'resource' => '2106124', 	'name' => 'NewReceiptForm', 		'title' => 'Receipt', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110121', 	'resource' => '2106125', 	'name' => 'NewOrderDeliveryForm', 		'title' => 'Order Delivery', 	'action_text' => 'Save', 										])
             ->create([	'id' => '2110122', 	'resource' => '2106126', 	'name' => 'AddDeliveryItemsForm', 		'title' => 'Delivery Contents', 	'action_text' => 'Save', 										])
