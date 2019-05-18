@@ -17,6 +17,7 @@ class CreateOrderItemsTable extends Migration
             $table->bigIncrements('id');
             $table->foreignCascade('order', 'orders');
             $table->foreignNullable('item', 'items');
+            $table->foreignNullable('hub', 'hubs');
             $table->foreignNullable('label', 'identity_labels');
             $table->foreignNullable('shelf', 'shelf');
             $table->date('delivery')->nullable();
