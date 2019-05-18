@@ -15,6 +15,7 @@
             LLMEvents\NewDefaultShelf::class => Listeners\DeleteAllDefaultShelfOfAHub::class,
             LLMEvents\OrderSaving::class => [Listeners\SetOrderAttributes::class,Listeners\UpdateInvoiceItemPricesIfPLChanged::class],
             LLMEvents\OrderSaved::class => Listeners\CreateInvoiceForOrderIfNotExists::class,
+            LLMEvents\OrderItemCreated::class => Listeners\SetOrderItemAttributes::class
         ];
 
         public static function Register(){
