@@ -25,4 +25,5 @@ class Hub extends Model
     public function Deliveries(){ return $this->hasMany(Delivery::class,'hub', 'id'); }
     public function ShiftFrom(){ return $this->hasMany(HubShift::class,'source_hub', 'id'); }
     public function ShiftTowards(){ return $this->hasMany(HubShift::class,'destination_hub', 'id'); }
+    public function OrderItems(){ return $this->hasMany(OrderItem::class,'hub', 'id'); }
 }
