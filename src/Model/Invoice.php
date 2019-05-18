@@ -15,7 +15,7 @@ class Invoice extends Model
     }
 
     public function Order(){ return $this->belongsTo(Order::class,'order','id'); }
-    public function Customer(){ return $this->belongsTo(LLMUser::class,'customer','id'); }
+    public function Customer(){ return $this->belongsTo(Customer::class,'customer','id'); }
     public function Items(){ return $this->hasMany(InvoiceItem::class,'invoice','id'); }
     public function Receipts(){ return $this->hasMany(Receipt::class,'invoice','id'); }
 
