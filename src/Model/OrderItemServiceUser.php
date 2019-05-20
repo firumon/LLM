@@ -2,6 +2,9 @@
 
 namespace Firumon\LLM\Model;
 
+use Firumon\LLM\Events\OrderItemServiceUserCreated;
+use Firumon\LLM\Events\OrderItemServiceUserCreating;
+
 class OrderItemServiceUser extends Model
 {
     protected $table = 'order_item_service_user';
@@ -18,6 +21,11 @@ class OrderItemServiceUser extends Model
     public function getEndAtAttribute($end_at){ return $this->getTimeToDateReadBy($end_at); }
     public function getServiceTimeAttribute($service_time){ return $this->secondsToReadable($service_time); }
     public function getTotalTimeAttribute($total_time){ return $this->secondsToReadable($total_time); }
+
+    protected $dispatchesEvents = [
+        'creating' => OrderItemServiceUserCreating::class,
+        'created' => OrderItemServiceUserCreated::class
+    ];
 
     private function getTimeToDateReadBy($time){
         if(!$time) return ''; $now = time();

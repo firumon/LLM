@@ -36,6 +36,7 @@ class ResourceDataRelationTableSeeder extends Seeder
             ->create([	'id' => '2130118', 	'resource_data' => '2128106', 	'relation' => '2109155', 													])
             ->create([	'id' => '2130119', 	'resource_data' => '2128106', 	'relation' => '2109188', 													])
             ->create([	'id' => '2130120', 	'resource_data' => '2128106', 	'relation' => '2109156', 	'nest_relation1' => '2109159', 												])
+            ->create([	'id' => '2130121', 	'resource_data' => '2128106', 	'relation' => '2109194', 													])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

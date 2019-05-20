@@ -58,7 +58,7 @@ class ResourceFormFieldAttrTableSeeder extends Seeder
             ->create([	'id' => '2114140', 	'form_field' => '2111157', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114141', 	'form_field' => '2111158', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114142', 	'form_field' => '2111159', 	'name' => 'inline', 	'value' => '4', 												])
-            ->create([	'id' => '2114143', 	'form_field' => '2111160', 	'name' => 'inline', 	'value' => '4', 												])
+            ->create([	'id' => '2114143', 	'form_field' => '2111161', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114144', 	'form_field' => '2111162', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114145', 	'form_field' => '2111163', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114146', 	'form_field' => '2111164', 	'name' => 'inline', 	'value' => '4', 												])
@@ -73,11 +73,10 @@ class ResourceFormFieldAttrTableSeeder extends Seeder
             ->create([	'id' => '2114155', 	'form_field' => '2111173', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114156', 	'form_field' => '2111174', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114157', 	'form_field' => '2111175', 	'name' => 'inline', 	'value' => '4', 												])
-            ->create([	'id' => '2114158', 	'form_field' => '2111176', 	'name' => 'inline', 	'value' => '4', 												])
-            ->create([	'id' => '2114159', 	'form_field' => '2111161', 	'name' => 'inline', 	'value' => '4', 												])
+            ->create([	'id' => '2114158', 	'form_field' => '2111160', 	'name' => 'inline', 	'value' => '4', 												])
+            ->create([	'id' => '2114159', 	'form_field' => '2111176', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114160', 	'form_field' => '2111177', 	'name' => 'inline', 	'value' => '4', 												])
             ->create([	'id' => '2114161', 	'form_field' => '2111178', 	'name' => 'inline', 	'value' => '4', 												])
-            ->create([	'id' => '2114162', 	'form_field' => '2111179', 	'name' => 'inline', 	'value' => '4', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

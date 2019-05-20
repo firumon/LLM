@@ -4,6 +4,7 @@ namespace Firumon\LLM\Model;
 
 use Firumon\LLM\Events\EmployeeCreated;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Arr;
 
 class Employee extends LLMUser
 {
@@ -24,9 +25,12 @@ class Employee extends LLMUser
     public function scopeMyHubProviders($Q){
         return (request()->user()->Groups->contains('name','owners'))
             ? $Q->providers()
-            : $Q->providers()->whereHas('Hubs',function($q){ $q->whereIn('id',LLMUser::find(request()->user()->id)->Hubs->map->id->toArray()); });
+            : $Q->providers()->whereHas('Hubs',function($q){ $q->whereIn('id',LLMUser::find(request()->user()->id)->Hubs->pluck('id')->all()); });
     }
 
     public function Services(){ return $this->belongsToMany(Service::class,'user_services','user','service')->withTimestamps(); }
     public function GroupsDisplayable(){ return $this->belongsToMany(Group::class,'__group_users','user','group')->employeeGroups(); }
+
+    protected $appends = ['name_and_services'];
+    public function getNameAndServicesAttribute(){ return $this->name . (($this->Services && $this->Services->isNotempty()) ? (' -> ' . implode(',', $this->Services->pluck('name')->all())) : ''); }
 }

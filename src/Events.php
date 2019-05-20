@@ -13,9 +13,12 @@
             LLMEvents\LLMUserCreated::class => Listeners\AddUserToGroups::class,
             LLMEvents\EmployeeCreated::class => Listeners\AddUserToGroups::class,
             LLMEvents\NewDefaultShelf::class => Listeners\DeleteAllDefaultShelfOfAHub::class,
-            LLMEvents\OrderSaving::class => [Listeners\SetOrderAttributes::class,Listeners\UpdateInvoiceItemPricesIfPLChanged::class],
-            LLMEvents\OrderSaved::class => Listeners\CreateInvoiceForOrderIfNotExists::class,
-            LLMEvents\OrderItemCreated::class => Listeners\SetOrderItemAttributes::class
+            LLMEvents\OrderCreating::class => Listeners\SetOrderAttributes::class,
+            LLMEvents\OrderCreated::class => Listeners\CreateInvoiceForOrderIfNotExists::class,
+            LLMEvents\OrderUpdating::class => Listeners\UpdateInvoiceItemPricesIfPLChanged::class,
+            LLMEvents\OrderItemCreated::class => Listeners\SetOrderItemAttributes::class,
+            LLMEvents\OrderItemServiceUserCreating::class => Listeners\SetOrderItemServiceUserAttributes::class,
+            LLMEvents\OrderItemServiceUserCreated::class => Listeners\UpdateOrderItemServiceStatus::class,
         ];
 
         public static function Register(){

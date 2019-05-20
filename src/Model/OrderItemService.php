@@ -2,6 +2,8 @@
 
 namespace Firumon\LLM\Model;
 
+use Firumon\LLM\Events\OrderItemServiceUpdated;
+
 class OrderItemService extends Model
 {
     protected $table = 'order_item_services';

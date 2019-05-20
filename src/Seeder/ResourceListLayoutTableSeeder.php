@@ -48,7 +48,7 @@ class ResourceListLayoutTableSeeder extends Seeder
             ->create([	'id' => '2126130', 	'resource_list' => '2123111', 	'label' => 'Hub', 	'field' => 'name', 	'relation' => '2109138', 											])
             ->create([	'id' => '2126131', 	'resource_list' => '2123111', 	'label' => 'Name', 	'field' => 'name', 												])
             ->create([	'id' => '2126132', 	'resource_list' => '2123111', 	'label' => 'Status', 	'field' => 'status', 												])
-            ->create([	'id' => '2126133', 	'resource_list' => '2123111', 	'label' => 'Current Item', 	'field' => 'read_name', 	'relation' => '2109139', 											])
+            ->create([	'id' => '2126133', 	'resource_list' => '2123111', 	'label' => 'Current Items', 	'field' => 'name', 	'relation' => '2109139', 											])
             ->create([	'id' => '2126134', 	'resource_list' => '2123112', 	'label' => 'ID', 	'field' => 'id', 												])
             ->create([	'id' => '2126135', 	'resource_list' => '2123112', 	'label' => 'Name', 	'field' => 'name', 												])
             ->create([	'id' => '2126136', 	'resource_list' => '2123112', 	'label' => 'Status', 	'field' => 'status', 												])
@@ -127,6 +127,12 @@ class ResourceListLayoutTableSeeder extends Seeder
             ->create([	'id' => '2126209', 	'resource_list' => '2123128', 	'label' => 'Customer', 	'field' => 'name', 	'relation' => '2109162', 											])
             ->create([	'id' => '2126210', 	'resource_list' => '2123128', 	'label' => 'Date', 	'field' => 'date', 												])
             ->create([	'id' => '2126211', 	'resource_list' => '2123128', 	'label' => 'Total', 	'field' => 'total', 												])
+            ->create([	'id' => '2126212', 	'resource_list' => '2123130', 	'label' => 'Item', 	'field' => 'name', 	'relation' => '2109153', 											])
+            ->create([	'id' => '2126213', 	'resource_list' => '2123130', 	'label' => 'Label', 	'field' => 'code', 	'relation' => '2109154', 											])
+            ->create([	'id' => '2126214', 	'resource_list' => '2123130', 	'label' => 'Shelf', 	'field' => 'hub_shelf_name', 	'relation' => '2109155', 											])
+            ->create([	'id' => '2126215', 	'resource_list' => '2123130', 	'label' => 'Services', 	'field' => 'name', 	'relation' => '2109188', 											])
+            ->create([	'id' => '2126216', 	'resource_list' => '2123130', 	'label' => 'Delivery Date', 	'field' => 'delivery', 												])
+            ->create([	'id' => '2126217', 	'resource_list' => '2123130', 	'label' => 'Progress', 	'field' => 'progress', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

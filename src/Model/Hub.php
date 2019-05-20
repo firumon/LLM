@@ -26,4 +26,9 @@ class Hub extends Model
     public function ShiftFrom(){ return $this->hasMany(HubShift::class,'source_hub', 'id'); }
     public function ShiftTowards(){ return $this->hasMany(HubShift::class,'destination_hub', 'id'); }
     public function OrderItems(){ return $this->hasMany(OrderItem::class,'hub', 'id'); }
+
+    public function scopeOwnHubs($Q){
+        if(request()->user()->Groups->contains('name','owners')) return $Q;
+        return $Q->whereIn('id',HubUser::where('user',request()->user()->id)->pluck('hub')->toArray());
+    }
 }

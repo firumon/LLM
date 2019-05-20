@@ -8,11 +8,11 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Support\Arr;
 
-class OrderSaving
+class OrderCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $order = null, $order_id = null, $order_pl = null;
+    public $order = null, $customer = null;
 
     /**
      * Create a new event instance.
@@ -22,8 +22,7 @@ class OrderSaving
     public function __construct(Order $order)
     {
         $this->order = $order;
-        $this->order_id = Arr::get($order,'id',null);
-        $this->order_pl = Arr::get($order,'pl',null);
+        $this->customer = Arr::get($order,'customer',null);
     }
 
 }

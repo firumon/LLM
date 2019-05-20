@@ -42,7 +42,7 @@ class ResourceTableSeeder extends Seeder
             ->create([	'id' => '2106124', 	'name' => 'Receipt', 	'description' => 'Recepits when a customer made payments against a invoice', 	'title' => 'Receipts', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'receipts', 	'controller' => 'ReceiptController', 	'controller_namespace' => 'Firumon\LLM\Controller', 								])
             ->create([	'id' => '2106125', 	'name' => 'Delivery', 	'description' => 'The order items to be delivered', 	'title' => 'Delivery', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'delivery', 										])
             ->create([	'id' => '2106126', 	'name' => 'DeliveryItem', 	'description' => 'Each item of a delivery', 	'title' => 'Delivery Items', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'delivery_items', 										])
-            ->create([	'id' => '2106127', 	'name' => 'HubShift', 	'description' => 'Shifting of order items from one hub to another', 	'title' => 'Hub Shift', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'hub_shift', 										])
+            ->create([	'id' => '2106127', 	'name' => 'HubShift', 	'description' => 'Shifting of order items from one hub to another', 	'title' => 'Hub Shift', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'hub_shift', 	'controller' => 'HubShiftController', 	'controller_namespace' => 'Firumon\LLM\Controller', 								])
             ->create([	'id' => '2106128', 	'name' => 'HubShiftItem', 	'description' => 'Each items in a shift', 	'title' => 'Hub Shift Items', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'hub_shift_items', 										])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);

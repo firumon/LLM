@@ -2,26 +2,26 @@
 
 namespace Firumon\LLM\Events;
 
-use Milestone\Appframe\Model\User;
+use Firumon\LLM\Model\OrderItemServiceUser;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 
-class EmployeeCreated
+class OrderItemServiceUserCreating
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $User, $Groups;
+    public $orderItemServiceUser, $requestUser;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(User $User)
+    public function __construct(OrderItemServiceUser $orderItemServiceUser)
     {
-        $this->User = $User;
-        $this->Groups = ['employees','llm_users'];
+        $this->orderItemServiceUser = $orderItemServiceUser;
+        $this->requestUser = request()->user()->id;
     }
 
 }

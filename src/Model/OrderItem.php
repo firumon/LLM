@@ -21,6 +21,8 @@ class OrderItem extends Model
     public function Services(){ return $this->belongsToMany(Service::class,'order_item_services','oi','service','id','id')->withTimestamps()->withPivot(['progress']); }
     public function Hub(){ return $this->belongsTo(Hub::class,'hub','id'); }
 
+    public function scopeOwnHubItems($Q){ return $Q->whereIn('hub',Hub::ownHubs()->pluck('id')->all()); }
+
     protected $appends = ['name'];
     function getNameAttribute(){ return implode("/",[$this->order,$this->Item->name]); }
 }

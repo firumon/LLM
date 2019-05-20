@@ -2,12 +2,10 @@
 
     namespace Firumon\LLM\Listeners;
 
-    use Firumon\LLM\Events\OrderSaved;
+    use Firumon\LLM\Events\OrderCreated;
     use Firumon\LLM\Model\Invoice;
     use Firumon\LLM\Model\InvoiceItem;
     use Firumon\LLM\Model\Pricelist;
-    use Illuminate\Queue\InteractsWithQueue;
-    use Illuminate\Contracts\Queue\ShouldQueue;
     use Illuminate\Support\Arr;
 
     class CreateInvoiceForOrderIfNotExists
@@ -28,12 +26,12 @@
          * @param object $event
          * @return void
          */
-        public function handle(OrderSaved $event)
+        public function handle(OrderCreated $event)
         {
             $orderInvoice = $event->order->Invoice;
             if ($orderInvoice) return;
             $order = $event->order;
-            $invoice = $this->createInvoice(array_combine(['customer', 'date', 'order'], [$order->customer, $order->date, $order->id]));
+            $invoice = $this->createInvoice(array_combine(['customer', 'date', 'order'], [$event->customer, $order->date, $order->id]));
             $this->createInvoiceItemsFromRequest($invoice);
         }
 

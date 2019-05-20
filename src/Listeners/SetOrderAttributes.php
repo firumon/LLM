@@ -2,7 +2,7 @@
 
 namespace Firumon\LLM\Listeners;
 
-use Firumon\LLM\Events\OrderSaving;
+use Firumon\LLM\Events\OrderCreating;
 use Firumon\LLM\Model\LLMUser;
 use Illuminate\Support\Arr;
 
@@ -23,7 +23,7 @@ class SetOrderAttributes
      * @param  object  $event
      * @return void
      */
-    public function handle(OrderSaving $event)
+    public function handle(OrderCreating $event)
     {
         $order = $event->order;
         if(!$event->order_id){

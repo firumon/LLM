@@ -50,10 +50,11 @@ class ResourceDataViewSectionItemTableSeeder extends Seeder
             ->create([	'id' => '2132132', 	'section' => '2131112', 	'label' => 'Shelf', 	'attribute' => 'name', 	'relation' => '2109155', 											])
             ->create([	'id' => '2132133', 	'section' => '2131112', 	'label' => 'Label', 	'attribute' => 'code', 	'relation' => '2109154', 											])
             ->create([	'id' => '2132134', 	'section' => '2131112', 	'label' => 'Services', 	'attribute' => 'name', 	'relation' => '2109188', 											])
-            ->create([	'id' => '2132135', 	'section' => '2131112', 	'label' => 'Progress', 	'attribute' => 'progress', 												])
-            ->create([	'id' => '2132136', 	'section' => '2131113', 	'label' => 'Service', 	'attribute' => 'name', 	'relation' => '2109159', 											])
-            ->create([	'id' => '2132137', 	'section' => '2131113', 	'label' => 'Users', 	'attribute' => 'name', 	'relation' => '2109189', 											])
-            ->create([	'id' => '2132138', 	'section' => '2131113', 	'label' => 'Progress', 	'attribute' => 'progress', 												])
+            ->create([	'id' => '2132135', 	'section' => '2131112', 	'label' => 'Current Hub', 	'attribute' => 'name', 	'relation' => '2109194', 											])
+            ->create([	'id' => '2132136', 	'section' => '2131112', 	'label' => 'Progress', 	'attribute' => 'progress', 												])
+            ->create([	'id' => '2132137', 	'section' => '2131113', 	'label' => 'Service', 	'attribute' => 'name', 	'relation' => '2109159', 											])
+            ->create([	'id' => '2132138', 	'section' => '2131113', 	'label' => 'Users', 	'attribute' => 'name', 	'relation' => '2109189', 											])
+            ->create([	'id' => '2132139', 	'section' => '2131113', 	'label' => 'Progress', 	'attribute' => 'progress', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

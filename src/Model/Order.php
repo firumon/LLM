@@ -2,8 +2,9 @@
 
 namespace Firumon\LLM\Model;
 
-use Firumon\LLM\Events\OrderSaved;
-use Firumon\LLM\Events\OrderSaving;
+use Firumon\LLM\Events\OrderCreated;
+use Firumon\LLM\Events\OrderCreating;
+use Firumon\LLM\Events\OrderUpdating;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,8 +14,9 @@ class Order extends Model
     public static $recentDuration = '-3 days';
 
     protected $dispatchesEvents = [
-        'saving' => OrderSaving::class,
-        'saved' => OrderSaved::class
+        'creating' => OrderCreating::class,
+        'created' => OrderCreated::class,
+        'updating' => OrderUpdating::class
     ];
 
     protected $dates = ['date'];
