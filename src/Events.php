@@ -19,6 +19,9 @@
             LLMEvents\OrderItemCreated::class => Listeners\SetOrderItemAttributes::class,
             LLMEvents\OrderItemServiceUserCreating::class => Listeners\SetOrderItemServiceUserAttributes::class,
             LLMEvents\OrderItemServiceUserCreated::class => Listeners\UpdateOrderItemServiceStatus::class,
+            LLMEvents\HubShiftUpdated::class => Listeners\UpdateShiftItemsHub::class,
+            LLMEvents\EmployeeUpdating::class => Listeners\SetAssignDetailsForNewlyAddedTasks::class,
+            LLMEvents\OrderItemServiceUpdating::class => Listeners\UpdateOderItemServiceProgressOnAssignDetails::class
         ];
 
         public static function Register(){

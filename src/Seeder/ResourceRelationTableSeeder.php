@@ -112,6 +112,8 @@ class ResourceRelationTableSeeder extends Seeder
             ->create([	'id' => '2109194', 	'resource' => '2106119', 	'name' => 'OrderItemHub', 	'description' => 'The hub in which the Item currently resides', 	'method' => 'Hub', 	'type' => 'belongsTo', 	'relate_resource' => '2106107', 									])
             ->create([	'id' => '2109195', 	'resource' => '2106107', 	'name' => 'HubOrderItems', 	'description' => 'The order items in a hub currently', 	'method' => 'OrderItems', 	'type' => 'hasMany', 	'relate_resource' => '2106119', 									])
             ->create([	'id' => '2109196', 	'resource' => '2106127', 	'name' => 'ManageShiftItems', 	'description' => 'The list of order items which can be managed', 	'method' => 'ManageItems', 	'type' => 'belongsToMany', 	'relate_resource' => '2106119', 									])
+            ->create([	'id' => '2109197', 	'resource' => '2106104', 	'name' => 'EmployeeJobServices', 	'description' => 'The job services assigned to an provider', 	'method' => 'Tasks', 	'type' => 'belongsToMany', 	'relate_resource' => '2106120', 									])
+            ->create([	'id' => '2109198', 	'resource' => '2106104', 	'name' => 'TaskList', 	'description' => 'The job details assigned to an provider', 	'method' => 'TaskList', 	'type' => 'hasMany', 	'relate_resource' => '2106123', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

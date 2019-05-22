@@ -2,11 +2,12 @@
 
 namespace Firumon\LLM\Model;
 
-use Firumon\LLM\Events\OrderItemServiceUpdated;
+use Firumon\LLM\Events\OrderItemServiceUpdating;
 
 class OrderItemService extends Model
 {
     protected $table = 'order_item_services';
+    protected $dispatchesEvents = ['updating' => OrderItemServiceUpdating::class];
 
     public function OrderItem(){ return $this->belongsTo(OrderItem::class,'oi','id'); }
     public function Service(){ return $this->belongsTo(Service::class,'service','id'); }

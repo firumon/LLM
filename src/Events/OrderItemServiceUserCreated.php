@@ -20,7 +20,7 @@ class OrderItemServiceUserCreated
      */
     public function __construct(OrderItemServiceUser $orderItemServiceUser)
     {
-        $this->orderItemServiceUser = $orderItemServiceUser;
+        $this->orderItemServiceUser = $orderItemServiceUser->load('OIS.OrderItem.Order');
     }
 
 }

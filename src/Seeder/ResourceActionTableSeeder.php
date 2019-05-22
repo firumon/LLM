@@ -96,6 +96,8 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133178', 	'resource' => '2106120', 	'name' => 'OISAssignUsersAction', 		'title' => 'Assign Providers', 											])
             ->create([	'id' => '2133179', 	'resource' => '2106127', 	'name' => 'HubShiftUpdateAction', 		'title' => 'Edit', 											])
             ->create([	'id' => '2133180', 	'resource' => '2106127', 	'name' => 'ManageHubShiftItems', 		'title' => 'Add/Remove Items', 											])
+            ->create([	'id' => '2133181', 	'resource' => '2106104', 	'name' => 'ManageEmployeeJobTasks', 		'title' => 'Manage Tasks', 											])
+            ->create([	'id' => '2133182', 	'resource' => '2106120', 	'name' => 'ManageServiceEmployees', 		'title' => 'Add/Remove Employees', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

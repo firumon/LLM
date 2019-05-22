@@ -2,8 +2,6 @@
 
 namespace Firumon\LLM\Listeners;
 
-use Firumon\LLM\Model\OrderItemServiceUser;
-
 class UpdateOrderItemServiceStatus
 {
     private $progressMap = [

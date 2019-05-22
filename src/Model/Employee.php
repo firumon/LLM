@@ -3,6 +3,7 @@
 namespace Firumon\LLM\Model;
 
 use Firumon\LLM\Events\EmployeeCreated;
+use Firumon\LLM\Events\EmployeeUpdating;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 
@@ -18,7 +19,7 @@ class Employee extends LLMUser
     protected $table = 'users';
     public static $_Groups = ['managers','service_providers'];
 
-    protected $dispatchesEvents = [ 'created' => EmployeeCreated::class ];
+    protected $dispatchesEvents = [ 'created' => EmployeeCreated::class,'updating' => EmployeeUpdating::class ];
 
     public function scopeManagers($Q){ return $Q->whereHas('Groups',function($q){ $q->where('name','managers'); }); }
     public function scopeProviders($Q){ return $Q->whereHas('Groups',function($q){ $q->where('name','service_providers'); }); }
@@ -30,6 +31,8 @@ class Employee extends LLMUser
 
     public function Services(){ return $this->belongsToMany(Service::class,'user_services','user','service')->withTimestamps(); }
     public function GroupsDisplayable(){ return $this->belongsToMany(Group::class,'__group_users','user','group')->employeeGroups(); }
+    public function Tasks(){ return $this->belongsToMany(OrderItemService::class,'order_item_service_user','user','ois','id','id')->withTimestamps(); }
+    public function TaskList(){ return $this->hasMany(OrderItemServiceUser::class,'user','id'); }
 
     protected $appends = ['name_and_services'];
     public function getNameAndServicesAttribute(){ return $this->name . (($this->Services && $this->Services->isNotempty()) ? (' -> ' . implode(',', $this->Services->pluck('name')->all())) : ''); }
