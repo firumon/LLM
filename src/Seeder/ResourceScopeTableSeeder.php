@@ -30,6 +30,8 @@ class ResourceScopeTableSeeder extends Seeder
             ->create([	'id' => '2108112', 	'resource' => '2106121', 	'name' => 'PaidInvoices', 	'description' => 'Invoices which are paid', 	'method' => 'paid', 											])
             ->create([	'id' => '2108113', 	'resource' => '2106107', 	'name' => 'OwnHubs', 	'description' => 'Only hubs which are assigned to the request user', 	'method' => 'ownHubs', 											])
             ->create([	'id' => '2108114', 	'resource' => '2106119', 	'name' => 'OwnHubItems', 	'description' => 'The order items which belongs to the hubs assigned to the requestor', 	'method' => 'ownHubItems', 											])
+            ->create([	'id' => '2108115', 	'resource' => '2106118', 	'name' => 'OwnHubOrders', 	'description' => 'The orders which are created from within hubs assigned', 	'method' => 'ownHub', 											])
+            ->create([	'id' => '2108116', 	'resource' => '2106120', 	'name' => 'OwnHubOrderItemServices', 	'description' => 'The services which are to be performed from within assiged hubs', 	'method' => 'ownHub', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
