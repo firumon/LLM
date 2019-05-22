@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class Order extends Model
 {
     protected $table = 'orders';
-    public static $recentDuration = '-3 days';
+    public static $recentDuration = '-7 days';
 
     protected $dispatchesEvents = [
         'creating' => OrderCreating::class,
@@ -40,4 +40,5 @@ class Order extends Model
     public function scopeRecent($Q){ return $Q->where('date','>=',date('Y-m-d',strtotime(static::$recentDuration))); }
     public function scopeUndelivered($Q){ return $Q->whereNot('progress','Delivered'); }
     public function scopeProcessing($Q){ return $Q->where('progress','In Service'); }
+    public function scopeOwnHub($Q){ return $Q->whereHas('Hub',function($Q){ return $Q->ownHubs(); }); }
 }
