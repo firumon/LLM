@@ -21,7 +21,8 @@
             LLMEvents\OrderItemServiceUserCreated::class => Listeners\UpdateOrderItemServiceStatus::class,
             LLMEvents\HubShiftUpdated::class => Listeners\UpdateShiftItemsHub::class,
             LLMEvents\EmployeeUpdating::class => Listeners\SetAssignDetailsForNewlyAddedTasks::class,
-            LLMEvents\OrderItemServiceUpdating::class => Listeners\UpdateOderItemServiceProgressOnAssignDetails::class
+            LLMEvents\OrderItemServiceUpdating::class => Listeners\UpdateOderItemServiceProgressOnAssignDetails::class,
+            LLMEvents\OrderItemServiceUserUpdated::class => Listeners\OISUSetAttributeAndUpdateProgress::class,
         ];
 
         public static function Register(){

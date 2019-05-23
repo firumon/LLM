@@ -29,6 +29,17 @@ class ResourceListScopeTableSeeder extends Seeder
             ->create([	'id' => '2124111', 	'resource_list' => '2123130', 	'scope' => '2108114', 													])
             ->create([	'id' => '2124112', 	'resource_list' => '2123131', 	'scope' => '2108115', 													])
             ->create([	'id' => '2124113', 	'resource_list' => '2123132', 	'scope' => '2108116', 													])
+            ->create([	'id' => '2124114', 	'resource_list' => '2123133', 	'scope' => '2108117', 													])
+            ->create([	'id' => '2124115', 	'resource_list' => '2123134', 	'scope' => '2108118', 													])
+            ->create([	'id' => '2124116', 	'resource_list' => '2123135', 	'scope' => '2108119', 													])
+            ->create([	'id' => '2124117', 	'resource_list' => '2123136', 	'scope' => '2108120', 													])
+            ->create([	'id' => '2124118', 	'resource_list' => '2123137', 	'scope' => '2108121', 													])
+            ->create([	'id' => '2124119', 	'resource_list' => '2123138', 	'scope' => '2108118', 													])
+            ->create([	'id' => '2124120', 	'resource_list' => '2123138', 	'scope' => '2108119', 													])
+            ->create([	'id' => '2124121', 	'resource_list' => '2123139', 	'scope' => '2108118', 													])
+            ->create([	'id' => '2124122', 	'resource_list' => '2123139', 	'scope' => '2108120', 													])
+            ->create([	'id' => '2124123', 	'resource_list' => '2123140', 	'scope' => '2108118', 													])
+            ->create([	'id' => '2124124', 	'resource_list' => '2123140', 	'scope' => '2108121', 													])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

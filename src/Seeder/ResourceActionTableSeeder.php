@@ -100,6 +100,16 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133182', 	'resource' => '2106120', 	'name' => 'ManageServiceEmployees', 		'title' => 'Add/Remove Employees', 											])
             ->create([	'id' => '2133183', 	'resource' => '2106118', 	'name' => 'OwnHubOrdersListAction', 				'menu' => 'Orders', 									])
             ->create([	'id' => '2133184', 	'resource' => '2106120', 	'name' => 'OwnHubOrderItemServices', 				'menu' => 'Order Item Services', 									])
+            ->create([	'id' => '2133185', 	'resource' => '2106123', 	'name' => 'JobsListAction', 				'menu' => 'All Jobs', 									])
+            ->create([	'id' => '2133186', 	'resource' => '2106123', 	'name' => 'OwnJobsListAction', 				'menu' => 'My All Jobs', 									])
+            ->create([	'id' => '2133187', 	'resource' => '2106123', 	'name' => 'NewJobsListAction', 				'menu' => 'New Jobs', 									])
+            ->create([	'id' => '2133188', 	'resource' => '2106123', 	'name' => 'ServicingJobsListAction', 				'menu' => 'Servicing Jobs', 									])
+            ->create([	'id' => '2133189', 	'resource' => '2106123', 	'name' => 'CompletedJobsListAction', 				'menu' => 'Completed Jobs', 									])
+            ->create([	'id' => '2133190', 	'resource' => '2106123', 	'name' => 'OwnNewJobsListAction', 				'menu' => 'My New Jobs', 									])
+            ->create([	'id' => '2133191', 	'resource' => '2106123', 	'name' => 'OwnServicingJobsListAction', 				'menu' => 'My Servicing Jobs', 									])
+            ->create([	'id' => '2133192', 	'resource' => '2106123', 	'name' => 'OwnCompletedJobsListAction', 				'menu' => 'My Completed Jobs', 									])
+            ->create([	'id' => '2133193', 	'resource' => '2106123', 	'name' => 'StartJobAction', 		'title' => 'Update Start Time', 											])
+            ->create([	'id' => '2133194', 	'resource' => '2106123', 	'name' => 'FinishJobAction', 		'title' => 'Update Finish Time', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

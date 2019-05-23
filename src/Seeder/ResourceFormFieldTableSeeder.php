@@ -101,6 +101,8 @@ class ResourceFormFieldTableSeeder extends Seeder
             ->create([	'id' => '2111183', 	'resource_form' => '2110127', 	'name' => 'date', 	'type' => 'text', 	'label' => 'Date', 											])
             ->create([	'id' => '2111184', 	'resource_form' => '2110127', 	'name' => 'pl', 	'type' => 'select', 	'label' => 'Price List', 											])
             ->create([	'id' => '2111185', 	'resource_form' => '2110127', 	'name' => 'hub', 	'type' => 'select', 	'label' => 'Hub', 											])
+            ->create([	'id' => '2111186', 	'resource_form' => '2110128', 	'name' => 'start_at', 	'type' => 'text', 	'label' => 'Start Date and Time', 											])
+            ->create([	'id' => '2111187', 	'resource_form' => '2110129', 	'name' => 'end_at', 	'type' => 'text', 	'label' => 'Finied on Date and Time', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

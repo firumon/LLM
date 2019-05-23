@@ -69,6 +69,12 @@ class ResourceListRelationTableSeeder extends Seeder
             ->create([	'id' => '2125151', 	'resource_list' => '2123132', 	'relation' => '2109158', 													])
             ->create([	'id' => '2125152', 	'resource_list' => '2123132', 	'relation' => '2109159', 													])
             ->create([	'id' => '2125153', 	'resource_list' => '2123132', 	'relation' => '2109189', 													])
+            ->create([	'id' => '2125154', 	'resource_list' => '2123133', 	'relation' => '2109168', 													])
+            ->create([	'id' => '2125155', 	'resource_list' => '2123134', 	'relation' => '2109168', 													])
+            ->create([	'id' => '2125156', 	'resource_list' => '2123135', 	'relation' => '2109190', 													])
+            ->create([	'id' => '2125157', 	'resource_list' => '2123136', 	'relation' => '2109168', 													])
+            ->create([	'id' => '2125158', 	'resource_list' => '2123137', 	'relation' => '2109168', 													])
+            ->create([	'id' => '2125159', 	'resource_list' => '2123138', 	'relation' => '2109190', 													])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

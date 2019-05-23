@@ -48,6 +48,14 @@ class ResourceListTableSeeder extends Seeder
             ->create([	'id' => '2123130', 	'resource' => '2106119', 	'name' => 'OwnHubOrderItems', 		'title' => 'Order Items', 	'identity' => 'name', 	'items_per_page' => '100', 									])
             ->create([	'id' => '2123131', 	'resource' => '2106118', 	'name' => 'OwnHubOrders', 		'title' => 'Orders', 	'identity' => 'id', 	'items_per_page' => '30', 									])
             ->create([	'id' => '2123132', 	'resource' => '2106120', 	'name' => 'OwnHubOISList', 		'title' => 'Item Services', 	'identity' => 'name', 	'items_per_page' => '30', 									])
+            ->create([	'id' => '2123133', 	'resource' => '2106123', 	'name' => 'OwnHubOISUList', 		'title' => 'Jobs', 	'identity' => 'name', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123134', 	'resource' => '2106123', 	'name' => 'MyJobs', 		'title' => 'My Jobs', 	'identity' => 'name', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123135', 	'resource' => '2106123', 	'name' => 'NewJobsList', 		'title' => 'New Jobs', 	'identity' => 'name', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123136', 	'resource' => '2106123', 	'name' => 'ServicingJobsList', 		'title' => 'In Service Jobs', 	'identity' => 'name', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123137', 	'resource' => '2106123', 	'name' => 'CompletedJobsList', 		'title' => 'Completed Jobs', 	'identity' => 'name', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123138', 	'resource' => '2106123', 	'name' => 'MyNewJobsList', 		'title' => 'My New Jobs', 	'identity' => 'name', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123139', 	'resource' => '2106123', 	'name' => 'MyInServiceJobs', 		'title' => 'My Servicing Jobs', 	'identity' => 'name', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123140', 	'resource' => '2106123', 	'name' => 'MyCompleted', 		'title' => 'My Completed Jobs', 	'identity' => 'name', 	'items_per_page' => '100', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

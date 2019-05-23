@@ -32,6 +32,11 @@ class ResourceScopeTableSeeder extends Seeder
             ->create([	'id' => '2108114', 	'resource' => '2106119', 	'name' => 'OwnHubItems', 	'description' => 'The order items which belongs to the hubs assigned to the requestor', 	'method' => 'ownHubItems', 											])
             ->create([	'id' => '2108115', 	'resource' => '2106118', 	'name' => 'OwnHubOrders', 	'description' => 'The orders which are created from within hubs assigned', 	'method' => 'ownHub', 											])
             ->create([	'id' => '2108116', 	'resource' => '2106120', 	'name' => 'OwnHubOrderItemServices', 	'description' => 'The services which are to be performed from within assiged hubs', 	'method' => 'ownHub', 											])
+            ->create([	'id' => '2108117', 	'resource' => '2106123', 	'name' => 'OwnHubOISUs', 	'description' => 'The Jobs which are available within own hub', 	'method' => 'ownHub', 											])
+            ->create([	'id' => '2108118', 	'resource' => '2106123', 	'name' => 'OwnJobs', 	'description' => 'Jobs/Tasks which are assigned to the current user', 	'method' => 'myJobs', 											])
+            ->create([	'id' => '2108119', 	'resource' => '2106123', 	'name' => 'NewJobs', 	'description' => 'Jobs which are assigned but not started', 	'method' => 'new', 											])
+            ->create([	'id' => '2108120', 	'resource' => '2106123', 	'name' => 'InServiceJobs', 	'description' => 'Jobs which are started but not finished', 	'method' => 'inService', 											])
+            ->create([	'id' => '2108121', 	'resource' => '2106123', 	'name' => 'CompletedJobs', 	'description' => 'Jobs which are finished', 	'method' => 'completed', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
