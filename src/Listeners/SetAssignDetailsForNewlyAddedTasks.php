@@ -3,9 +3,10 @@
 namespace Firumon\LLM\Listeners;
 
 use Firumon\LLM\Events\EmployeeUpdating;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Carbon;
 
-class SetAssignDetailsForNewlyAddedTasks
+class SetAssignDetailsForNewlyAddedTasks implements ShouldQueue
 {
 
     private $createdRecentSeconds = 5;

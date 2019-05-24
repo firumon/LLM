@@ -8,7 +8,7 @@ use Firumon\LLM\Events\LLMUserCreated;
 use Milestone\Appframe\Model\Group;
 use Milestone\Appframe\Model\User;
 
-class AddUserToGroups
+class AddUserToGroups implements ShouldQueue
 {
     /**
      * Create the event listener.

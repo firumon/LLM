@@ -4,9 +4,10 @@ namespace Firumon\LLM\Listeners;
 
 use Firumon\LLM\Events\OrderItemCreated;
 use Firumon\LLM\Model\LLMUser;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Arr;
 
-class SetOrderItemAttributes
+class SetOrderItemAttributes implements ShouldQueue
 {
     /**
      * Create the event listener.

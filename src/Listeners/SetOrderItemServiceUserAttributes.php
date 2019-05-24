@@ -3,8 +3,9 @@
 namespace Firumon\LLM\Listeners;
 
 use Firumon\LLM\Events\OrderItemServiceUserCreating;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SetOrderItemServiceUserAttributes
+class SetOrderItemServiceUserAttributes implements ShouldQueue
 {
     /**
      * Create the event listener.

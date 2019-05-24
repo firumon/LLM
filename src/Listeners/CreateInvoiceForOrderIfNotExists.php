@@ -6,9 +6,10 @@
     use Firumon\LLM\Model\Invoice;
     use Firumon\LLM\Model\InvoiceItem;
     use Firumon\LLM\Model\Pricelist;
+    use Illuminate\Contracts\Queue\ShouldQueue;
     use Illuminate\Support\Arr;
 
-    class CreateInvoiceForOrderIfNotExists
+    class CreateInvoiceForOrderIfNotExists implements ShouldQueue
     {
         /**
          * Create the event listener.

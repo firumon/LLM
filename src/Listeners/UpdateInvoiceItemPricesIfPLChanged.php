@@ -5,9 +5,10 @@ namespace Firumon\LLM\Listeners;
 use Firumon\LLM\Events\OrderUpdating;
 use Firumon\LLM\Model\Order;
 use Firumon\LLM\Model\Pricelist;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Arr;
 
-class UpdateInvoiceItemPricesIfPLChanged
+class UpdateInvoiceItemPricesIfPLChanged implements ShouldQueue
 {
     /**
      * Create the event listener.

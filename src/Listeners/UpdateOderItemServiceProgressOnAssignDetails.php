@@ -4,9 +4,10 @@ namespace Firumon\LLM\Listeners;
 
 use Firumon\LLM\Events\OrderItemServiceUpdating;
 use Firumon\LLM\Events\OrderItemServiceUserCreated;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Carbon;
 
-class UpdateOderItemServiceProgressOnAssignDetails
+class UpdateOderItemServiceProgressOnAssignDetails implements ShouldQueue
 {
     /**
      * Create the event listener.

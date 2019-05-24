@@ -3,8 +3,9 @@
 namespace Firumon\LLM\Listeners;
 
 use Firumon\LLM\Events\HubShiftUpdated;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class UpdateShiftItemsHub
+class UpdateShiftItemsHub implements ShouldQueue
 {
     /**
      * Create the event listener.

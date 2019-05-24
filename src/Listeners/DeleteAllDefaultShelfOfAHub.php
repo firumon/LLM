@@ -7,7 +7,7 @@ use Firumon\LLM\Model\HubDefaultShelf;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class DeleteAllDefaultShelfOfAHub
+class DeleteAllDefaultShelfOfAHub implements ShouldQueue
 {
     /**
      * Create the event listener.

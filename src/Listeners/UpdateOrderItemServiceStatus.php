@@ -2,7 +2,9 @@
 
 namespace Firumon\LLM\Listeners;
 
-class UpdateOrderItemServiceStatus
+use Illuminate\Contracts\Queue\ShouldQueue;
+
+class UpdateOrderItemServiceStatus implements ShouldQueue
 {
     private $progressMap = [
         'New' => ['New','New'],
@@ -28,19 +30,20 @@ class UpdateOrderItemServiceStatus
      */
     public function handle($event)
     {
-        $orderItemServiceUser = $event->orderItemServiceUser;
-        if($orderItemServiceUser->end_at > 0){
-            $progress = ($orderItemServiceUser->OIS->Assigned->every(function ($oisu) {
-                return ($oisu->end_at > 0);
+        $OISU = $event->orderItemServiceUser->fresh(['OIS.Assigned']);
+        list($assigned_on,$start_at,$end_at) = [$OISU->getOriginal('assigned_on'),$OISU->getOriginal('start_at'),$OISU->getOriginal('end_at')];
+        if($end_at > 0){
+            $progress = ($OISU->OIS->Assigned->every(function ($oisu) {
+                return ($oisu->getOriginal('end_at') > 0);
             })) ? 'Completed' : 'Processing';
         }
-        elseif($orderItemServiceUser->start_at > 0) $progress = 'Processing';
-        elseif($orderItemServiceUser->assigned_on > 0) $progress = 'Assigned';
+        elseif($start_at > 0) $progress = 'Processing';
+        elseif($assigned_on > 0) $progress = 'Assigned';
         else $progress = 'New';
 
-        $event->orderItemServiceUser->OIS->progress = $progress;
-        $event->orderItemServiceUser->OIS->OrderItem->progress = $this->progressMap[$progress][0];
-        $event->orderItemServiceUser->OIS->OrderItem->Order->progress = $this->progressMap[$progress][1];
-        $event->orderItemServiceUser->push();
+        $OISU->OIS->progress = $progress;
+        $OISU->OIS->OrderItem->progress = $this->progressMap[$progress][0];
+        $OISU->OIS->OrderItem->Order->progress = $this->progressMap[$progress][1];
+        $OISU->push();
     }
 }
