@@ -4,13 +4,17 @@ namespace Firumon\LLM\Model;
 
 
 use Firumon\LLM\Events\OrderItemCreated;
+use Firumon\LLM\Events\OrderItemUpdated;
 
 class OrderItem extends Model
 {
     protected $table = 'order_items';
     protected $touches = ['Order','OIS'];
 
-    protected $dispatchesEvents = ['created' => OrderItemCreated::class];
+    protected $dispatchesEvents = [
+        'created' => OrderItemCreated::class,
+        'updated' => OrderItemUpdated::class,
+    ];
 
     public function scopeOwnHubItems($Q){ return $Q->whereIn('hub',Hub::ownHubs()->pluck('id')->all()); }
 
@@ -24,5 +28,8 @@ class OrderItem extends Model
     public function Hub(){ return $this->belongsTo(Hub::class,'hub','id'); }
 
     protected $appends = ['name'];
-    function getNameAttribute(){ return implode("/",[$this->order,$this->Item->name]); }
+    function getNameAttribute(){
+        $label = $this->label ? IdentityLabel::find($this->label)->code : false;
+        return ($label ? ("({$label}) ") : '') . implode("/",[$this->order,$this->Item->name]);
+    }
 }
