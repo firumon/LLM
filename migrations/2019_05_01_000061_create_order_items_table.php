@@ -21,7 +21,7 @@ class CreateOrderItemsTable extends Migration
             $table->foreignNullable('label', 'identity_labels');
             $table->foreignNullable('shelf', 'shelf');
             $table->date('delivery')->nullable();
-            $table->enum('progress', ['New','In Service','Service Completed','Delivered'])->nullable()->default('New');
+            $table->enum('progress', ['New','In Service','Service Completed','Ready To Deliver','Delivered'])->nullable()->default('New');
             $table->enum('status', ['Active','Inactive'])->nullable()->default('Active');
             $table->audit();
         });
