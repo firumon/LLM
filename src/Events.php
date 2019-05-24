@@ -15,7 +15,7 @@
             LLMEvents\NewDefaultShelf::class => Listeners\DeleteAllDefaultShelfOfAHub::class,
             LLMEvents\OrderCreating::class => Listeners\SetOrderAttributes::class,
             LLMEvents\OrderCreated::class => Listeners\CreateInvoiceForOrderIfNotExists::class,
-            LLMEvents\OrderUpdating::class => Listeners\UpdateInvoiceItemPricesIfPLChanged::class,
+            LLMEvents\OrderUpdating::class => [Listeners\UpdateInvoiceItemPricesIfPLChanged::class, Listeners\UpdateItemsHubIfNull::class],
             LLMEvents\OrderItemCreated::class => Listeners\SetOrderItemAttributes::class,
             LLMEvents\OrderItemServiceUserCreating::class => Listeners\SetOrderItemServiceUserAttributes::class,
             LLMEvents\OrderItemServiceUserCreated::class => Listeners\UpdateOrderItemServiceStatus::class,
@@ -23,6 +23,7 @@
             LLMEvents\EmployeeUpdating::class => Listeners\SetAssignDetailsForNewlyAddedTasks::class,
             LLMEvents\OrderItemServiceUpdating::class => Listeners\UpdateOderItemServiceProgressOnAssignDetails::class,
             LLMEvents\OrderItemServiceUserUpdated::class => Listeners\OISUSetAttributeAndUpdateProgress::class,
+            LLMEvents\OrderItemUpdated::class => Listeners\UpdateOrderItemDeliveryStatus::class
         ];
 
         public static function Register(){
