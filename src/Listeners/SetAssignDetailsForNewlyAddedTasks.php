@@ -2,7 +2,7 @@
 
 namespace Firumon\LLM\Listeners;
 
-use Firumon\LLM\Events\EmployeeUpdating;
+use Firumon\LLM\Events\EmployeeUpdated;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Carbon;
 
@@ -25,7 +25,7 @@ class SetAssignDetailsForNewlyAddedTasks implements ShouldQueue
      * @param  object  $event
      * @return void
      */
-    public function handle(EmployeeUpdating $event)
+    public function handle(EmployeeUpdated $event)
     {
         $dirty = $event->employee->getDirty();
         if(!empty($dirty) && count($dirty) === 1 && array_key_exists('updated_at',$dirty)){

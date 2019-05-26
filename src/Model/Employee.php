@@ -3,7 +3,7 @@
 namespace Firumon\LLM\Model;
 
 use Firumon\LLM\Events\EmployeeCreated;
-use Firumon\LLM\Events\EmployeeUpdating;
+use Firumon\LLM\Events\EmployeeUpdated;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 
@@ -19,7 +19,7 @@ class Employee extends LLMUser
     protected $table = 'users';
     public static $_Groups = ['managers','service_providers'];
 
-    protected $dispatchesEvents = [ 'created' => EmployeeCreated::class,'updating' => EmployeeUpdating::class ];
+    protected $dispatchesEvents = [ 'created' => EmployeeCreated::class,'updated' => EmployeeUpdated::class ];
 
     public function scopeManagers($Q){ return $Q->whereHas('Groups',function($q){ $q->where('name','managers'); }); }
     public function scopeProviders($Q){ return $Q->whereHas('Groups',function($q){ $q->where('name','service_providers'); }); }
