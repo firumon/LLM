@@ -96,7 +96,7 @@ class ResourceActionMethodTableSeeder extends Seeder
             ->create([	'id' => '2134178', 	'resource_action' => '2133178', 	'type' => 'AddRelation', 	'idn1' => '2109160', 	'idn2' => '2110119', 	'idn3' => '2111161', 										])
             ->create([	'id' => '2134179', 	'resource_action' => '2133179', 	'type' => 'FormWithData', 	'idn1' => '2110123', 	'idn2' => '2128112', 											])
             ->create([	'id' => '2134180', 	'resource_action' => '2133180', 	'type' => 'ManageRelation', 	'idn1' => '2109196', 	'idn2' => '2123130', 											])
-            ->create([	'id' => '2134181', 	'resource_action' => '2133181', 	'type' => 'ManageRelation', 	'idn1' => '2109197', 	'idn2' => '2123122', 											])
+            ->create([	'id' => '2134181', 	'resource_action' => '2133181', 	'type' => 'ManageRelation', 	'idn1' => '2109197', 	'idn2' => '2123142', 											])
             ->create([	'id' => '2134182', 	'resource_action' => '2133182', 	'type' => 'ManageRelation', 	'idn1' => '2109189', 	'idn2' => '2123105', 											])
             ->create([	'id' => '2134183', 	'resource_action' => '2133183', 	'type' => 'List', 	'idn1' => '2123131', 												])
             ->create([	'id' => '2134184', 	'resource_action' => '2133184', 	'type' => 'List', 	'idn1' => '2123132', 												])

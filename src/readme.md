@@ -1,0 +1,1 @@
+Set config.queue.default.QUEUE_CONNECTION = database

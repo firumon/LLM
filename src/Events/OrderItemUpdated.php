@@ -2,6 +2,8 @@
 
     namespace Firumon\LLM\Events;
 
+use Firumon\LLM\Jobs\UpdateLabelCurrentItem;
+use Firumon\LLM\Jobs\UpdateProgressOnHubChange;
 use Firumon\LLM\Model\OrderItem;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -20,7 +22,8 @@ class OrderItemUpdated
      */
     public function __construct(OrderItem $orderItem)
     {
-        $this->orderItem = $orderItem;
+        if($orderItem->wasChanged(['hub'])) UpdateProgressOnHubChange::dispatch($orderItem->id);
+        if($orderItem->wasChanged(['label'])) UpdateLabelCurrentItem::dispatch($orderItem->label,$orderItem->id);
     }
 
 }

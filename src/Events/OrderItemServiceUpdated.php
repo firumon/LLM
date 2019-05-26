@@ -2,16 +2,15 @@
 
     namespace Firumon\LLM\Events;
 
+use Firumon\LLM\Jobs\UpdateCompleteProgressOfOrderItem;
 use Firumon\LLM\Model\OrderItemService;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 
-class OrderItemServiceUpdating
+class OrderItemServiceUpdated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
-    public $orderItemService;
 
     /**
      * Create a new event instance.
@@ -20,7 +19,10 @@ class OrderItemServiceUpdating
      */
     public function __construct(OrderItemService $orderItemService)
     {
-        $this->orderItemService = $orderItemService;
+        $changes = $orderItemService->getChanges();
+        if(!empty($changes) && count($changes) === 1 && array_key_exists('updated_at',$changes)) {
+            UpdateCompleteProgressOfOrderItem::dispatch($orderItemService->oi);
+        }
     }
 
 }

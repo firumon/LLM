@@ -3,7 +3,6 @@
 namespace Firumon\LLM\Model;
 
 use Firumon\LLM\Events\OrderItemServiceUserCreated;
-use Firumon\LLM\Events\OrderItemServiceUserCreating;
 use Firumon\LLM\Events\OrderItemServiceUserUpdated;
 
 class OrderItemServiceUser extends Model
@@ -34,7 +33,6 @@ class OrderItemServiceUser extends Model
     public function scopeCompleted($Q){ $Q->where('end_at','>',0); }
 
     protected $dispatchesEvents = [
-        'creating' => OrderItemServiceUserCreating::class,
         'created' => OrderItemServiceUserCreated::class,
         'updated' => OrderItemServiceUserUpdated::class,
     ];

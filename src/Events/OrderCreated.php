@@ -2,6 +2,9 @@
 
     namespace Firumon\LLM\Events;
 
+use Firumon\LLM\Jobs\CreateInvoiceForOrderIfNotExists;
+use Firumon\LLM\Jobs\SetOrderAttributes;
+use Firumon\LLM\Model\LLMUser;
 use Firumon\LLM\Model\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -21,8 +24,8 @@ class OrderCreated
      */
     public function __construct(Order $order)
     {
-        $this->order = $order;
-        $this->customer = Arr::get($order,'customer',null);
+        SetOrderAttributes::dispatch($order,request()->user()->id,Arr::get(LLMUser::find(request()->user()->id)->Hubs,'0.id',null));
+        CreateInvoiceForOrderIfNotExists::dispatch($order,Arr::get($order,'customer',null),request('data'));
     }
 
 }

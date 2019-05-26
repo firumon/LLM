@@ -24,6 +24,8 @@ class ResourceFormFieldDependTableSeeder extends Seeder
             ->create([	'id' => '2117106', 	'form_field' => '2111171', 					'method' => 'getCurrentDateDependentValue', 		'ignore_null' => 'No', 							])
             ->create([	'id' => '2117107', 	'form_field' => '2111186', 					'method' => 'currentStartAtDateTime', 		'ignore_null' => 'No', 							])
             ->create([	'id' => '2117108', 	'form_field' => '2111187', 					'method' => 'currentEndAtDateTime', 		'ignore_null' => 'No', 							])
+            ->create([	'id' => '2117109', 	'form_field' => '2111166', 					'method' => 'getCurrentDateDependentValue', 		'ignore_null' => 'No', 							])
+            ->create([	'id' => '2117110', 	'form_field' => '2111168', 	'depend_field' => 'order', 	'db_field' => 'order', 	'operator' => '=', 				'ignore_null' => 'Yes', 							])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

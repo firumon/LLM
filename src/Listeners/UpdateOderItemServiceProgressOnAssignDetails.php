@@ -2,7 +2,7 @@
 
 namespace Firumon\LLM\Listeners;
 
-use Firumon\LLM\Events\OrderItemServiceUpdating;
+use Firumon\LLM\Events\OrderItemServiceUpdated;
 use Firumon\LLM\Events\OrderItemServiceUserCreated;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Carbon;
@@ -24,7 +24,7 @@ class UpdateOderItemServiceProgressOnAssignDetails implements ShouldQueue
      * @param  object  $event
      * @return void
      */
-    public function handle(OrderItemServiceUpdating $event)
+    public function handle(OrderItemServiceUpdated $event)
     {
         $dirty = $event->orderItemService->getDirty();
         if(!empty($dirty) && count($dirty) === 1 && array_key_exists('updated_at',$dirty)){

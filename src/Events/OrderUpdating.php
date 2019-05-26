@@ -2,11 +2,14 @@
 
     namespace Firumon\LLM\Events;
 
+use Firumon\LLM\Jobs\InactivateOrderInvoice;
+use Firumon\LLM\Jobs\UpdateInvoiceItemsPrice;
+use Firumon\LLM\Jobs\UpdateOrderItemsHubForHavingHubAsNull;
+use Firumon\LLM\Jobs\UpdateOrderItemsHubForHavingProgressAsNew;
 use Firumon\LLM\Model\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Support\Arr;
 
 class OrderUpdating
 {
@@ -21,9 +24,12 @@ class OrderUpdating
      */
     public function __construct(Order $order)
     {
-        $this->order = $order;
-        $this->order_id = Arr::get($order,'id',null);
-        $this->order_pl = Arr::get($order,'pl',null);
+        if($order->isDirty('pl')) UpdateInvoiceItemsPrice::dispatch($order->id,$order->pl)->delay(now()->addSeconds(2));
+        if($order->isDirty('status') && $order->status == 'Inactive') InactivateOrderInvoice::dispatch($order->id)->delay(now()->addSeconds(2));
+        if($order->isDirty('hub')){
+            UpdateOrderItemsHubForHavingHubAsNull::dispatch($order->id,$order->hub)->delay(now()->addSeconds(2));
+            UpdateOrderItemsHubForHavingProgressAsNew::dispatch($order->id,$order->hub)->delay(now()->addSeconds(2));
+        }
     }
 
 }

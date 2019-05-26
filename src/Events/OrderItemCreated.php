@@ -2,6 +2,8 @@
 
     namespace Firumon\LLM\Events;
 
+use Firumon\LLM\Jobs\SetItemHubAsItsOrderHub;
+use Firumon\LLM\Jobs\UpdateLabelCurrentItem;
 use Firumon\LLM\Model\OrderItem;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -20,8 +22,8 @@ class OrderItemCreated
      */
     public function __construct(OrderItem $orderItem)
     {
-        $this->orderItem = $orderItem;
-        $this->request = request()->toArray();
+        SetItemHubAsItsOrderHub::dispatch($orderItem);
+        if($orderItem->label) UpdateLabelCurrentItem::dispatch($orderItem->label,$orderItem->id);
     }
 
 }

@@ -10,6 +10,7 @@ class OrderItem extends Model
 {
     protected $table = 'order_items';
     protected $touches = ['Order','OIS'];
+    protected $fillable = ['label'];
 
     protected $dispatchesEvents = [
         'created' => OrderItemCreated::class,
@@ -26,6 +27,7 @@ class OrderItem extends Model
     public function Shifts(){ return $this->hasMany(HubShiftItem::class,'oi','id'); }
     public function Services(){ return $this->belongsToMany(Service::class,'order_item_services','oi','service','id','id')->withTimestamps()->withPivot(['progress']); }
     public function Hub(){ return $this->belongsTo(Hub::class,'hub','id'); }
+    public function Delivery(){ return $this->hasOne(DeliveryItem::class,'oi','id'); }
 
     protected $appends = ['name'];
     function getNameAttribute(){

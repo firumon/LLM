@@ -2,14 +2,15 @@
 
 namespace Firumon\LLM\Model;
 
-use Firumon\LLM\Events\OrderItemServiceUpdating;
+use Firumon\LLM\Events\OrderItemServiceUpdated;
 
 class OrderItemService extends Model
 {
     protected $table = 'order_item_services';
-    protected $dispatchesEvents = ['updating' => OrderItemServiceUpdating::class];
+    protected $dispatchesEvents = ['updated' => OrderItemServiceUpdated::class];
 
     public function scopeOwnHub($Q){ return $Q->whereHas('OrderItem',function($Q){ return $Q->ownHubItems(); }); }
+    public function scopeAssignable($Q){ return $Q->whereIn('progress',['New','Assigned']); }
 
     public function OrderItem(){ return $this->belongsTo(OrderItem::class,'oi','id'); }
     public function Service(){ return $this->belongsTo(Service::class,'service','id'); }

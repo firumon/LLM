@@ -2,6 +2,8 @@
 
 namespace Firumon\LLM\Events;
 
+use Firumon\LLM\Jobs\SetOrderItemServiceUserAttributes;
+use Firumon\LLM\Jobs\UpdateCompleteProgressOfOrderItem;
 use Firumon\LLM\Model\OrderItemServiceUser;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -20,7 +22,8 @@ class OrderItemServiceUserCreated
      */
     public function __construct(OrderItemServiceUser $orderItemServiceUser)
     {
-        $this->orderItemServiceUser = $orderItemServiceUser->load('OIS.OrderItem.Order');
+        SetOrderItemServiceUserAttributes::dispatch($orderItemServiceUser->id,request()->user()->id)->delay(now()->addSeconds(2));
+        UpdateCompleteProgressOfOrderItem::dispatch($orderItemServiceUser->OIS->oi)->delay(now()->addSeconds(3));
     }
 
 }

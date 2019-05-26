@@ -3,7 +3,6 @@
 namespace Firumon\LLM\Model;
 
 use Firumon\LLM\Events\OrderCreated;
-use Firumon\LLM\Events\OrderCreating;
 use Firumon\LLM\Events\OrderUpdating;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
@@ -14,9 +13,8 @@ class Order extends Model
     public static $recentDuration = '-7 days';
 
     protected $dispatchesEvents = [
-        'creating' => OrderCreating::class,
         'created' => OrderCreated::class,
-        'updating' => OrderUpdating::class
+        'updating' => OrderUpdating::class,
     ];
 
     protected $dates = ['date'];
@@ -40,5 +38,11 @@ class Order extends Model
     public function scopeRecent($Q){ return $Q->where('date','>=',date('Y-m-d',strtotime(static::$recentDuration))); }
     public function scopeUndelivered($Q){ return $Q->whereNot('progress','Delivered'); }
     public function scopeProcessing($Q){ return $Q->where('progress','In Service'); }
+    public function scopeDeliverable($Q){ return $Q->whereIn('progress',['Service Completed','Ready To Deliver','Delivered Partially']); }
     public function scopeOwnHub($Q){ return $Q->whereHas('Hub',function($Q){ return $Q->ownHubs(); }); }
+
+    protected $appends = ['name'];
+    function getNameAttribute(){
+        return implode('/',[$this->id,$this->Customer->name,$this->progress]); ;
+    }
 }

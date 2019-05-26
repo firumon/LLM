@@ -5,6 +5,7 @@ namespace Firumon\LLM\Model;
 class IdentityLabel extends Model
 {
     protected $table = 'identity_labels';
+    protected $fillable = ['hub','current'];
 
     public function Hub(){ return $this->belongsTo(Hub::class,'hub','id'); }
     public function Item(){ return $this->hasOne(OrderItem::class,'label','id'); }
