@@ -8,6 +8,7 @@ use Firumon\LLM\Events\OrderItemServiceUserUpdated;
 class OrderItemServiceUser extends Model
 {
     protected $table = 'order_item_service_user';
+    protected $fillable = ['assigned_by','assigned_on'];
 
     public function OIS(){ return $this->belongsTo(OrderItemService::class,'ois','id'); }
     public function User(){ return $this->belongsTo(Employee::class,'user','id'); }

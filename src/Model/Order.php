@@ -36,7 +36,7 @@ class Order extends Model
     public function Pricelist(){ return $this->belongsTo(Pricelist::class,'pl','id'); }
 
     public function scopeRecent($Q){ return $Q->where('date','>=',date('Y-m-d',strtotime(static::$recentDuration))); }
-    public function scopeUndelivered($Q){ return $Q->whereNot('progress','Delivered'); }
+    public function scopeUndelivered($Q){ return $Q->where('progress','!=','Delivered'); }
     public function scopeProcessing($Q){ return $Q->where('progress','In Service'); }
     public function scopeDeliverable($Q){ return $Q->whereIn('progress',['Service Completed','Ready To Deliver','Delivered Partially']); }
     public function scopeOwnHub($Q){ return $Q->whereHas('Hub',function($Q){ return $Q->ownHubs(); }); }

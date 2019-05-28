@@ -3,7 +3,7 @@
     namespace Firumon\LLM\Events;
 
 use Firumon\LLM\Jobs\AddDeliveryItems;
-use Firumon\LLM\Jobs\DetachLabels;
+use Firumon\LLM\Jobs\DetachLabel;
 use Firumon\LLM\Jobs\SetDeliveryAttributes;
 use Firumon\LLM\Model\Delivery;
 use Firumon\LLM\Model\LLMUser;
@@ -25,9 +25,8 @@ class DeliveryCreated
      */
     public function __construct(Delivery $delivery)
     {
-        SetDeliveryAttributes::dispatch($delivery,request()->user()->id,Arr::get(LLMUser::find(request()->user()->id)->Hubs,'0.id',null));
+        SetDeliveryAttributes::dispatch($delivery->id,request()->user()->id,Arr::get(LLMUser::find(request()->user()->id)->Hubs,'0.id',Arr::get($delivery,'Order.hub',null)));
         AddDeliveryItems::dispatch($delivery->id,request()->get('data')['oi']);
-        DetachLabels::dispatch($delivery->fresh()->hub,request()->get('data')['oi']);
     }
 
 }

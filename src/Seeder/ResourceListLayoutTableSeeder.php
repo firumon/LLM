@@ -180,6 +180,16 @@ class ResourceListLayoutTableSeeder extends Seeder
             ->create([	'id' => '2126262', 	'resource_list' => '2123142', 	'label' => 'Service', 	'field' => 'name', 	'relation' => '2109159', 											])
             ->create([	'id' => '2126263', 	'resource_list' => '2123142', 	'label' => 'Providers', 	'field' => 'name', 	'relation' => '2109189', 											])
             ->create([	'id' => '2126264', 	'resource_list' => '2123142', 	'label' => 'Progress', 	'field' => 'progress', 												])
+            ->create([	'id' => '2126265', 	'resource_list' => '2123143', 	'label' => 'ID', 	'field' => 'id', 												])
+            ->create([	'id' => '2126266', 	'resource_list' => '2123143', 	'label' => 'Customer', 	'field' => 'name', 	'relation' => '2109147', 											])
+            ->create([	'id' => '2126267', 	'resource_list' => '2123143', 	'label' => 'Date', 	'field' => 'date', 												])
+            ->create([	'id' => '2126268', 	'resource_list' => '2123143', 	'label' => 'Progress', 	'field' => 'progress', 												])
+            ->create([	'id' => '2126269', 	'resource_list' => '2123144', 	'label' => 'Item', 	'field' => 'name', 	'relation' => '2109153', 											])
+            ->create([	'id' => '2126270', 	'resource_list' => '2123144', 	'label' => 'Label', 	'field' => 'code', 	'relation' => '2109154', 											])
+            ->create([	'id' => '2126271', 	'resource_list' => '2123144', 	'label' => 'Shelf', 	'field' => 'hub_shelf_name', 	'relation' => '2109155', 											])
+            ->create([	'id' => '2126272', 	'resource_list' => '2123144', 	'label' => 'Services', 	'field' => 'name', 	'relation' => '2109188', 											])
+            ->create([	'id' => '2126273', 	'resource_list' => '2123144', 	'label' => 'Delivery Date', 	'field' => 'delivery', 												])
+            ->create([	'id' => '2126274', 	'resource_list' => '2123144', 	'label' => 'Progress', 	'field' => 'progress', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

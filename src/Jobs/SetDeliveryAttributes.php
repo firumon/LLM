@@ -2,6 +2,7 @@
 
 namespace Firumon\LLM\Jobs;
 
+use Firumon\LLM\Model\Delivery;
 use Firumon\LLM\Model\LLMUser;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -21,9 +22,9 @@ class SetDeliveryAttributes implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($delivery,$user,$hub)
+    public function __construct($delivery_id,$user,$hub)
     {
-        $this->delivery = $delivery;
+        $this->delivery = Delivery::find($delivery_id);
         $this->user = $user ?? request()->user()->id;
         $this->hub = $hub ?? Arr::get(LLMUser::find($this->user)->Hubs,'0.id',null);
     }

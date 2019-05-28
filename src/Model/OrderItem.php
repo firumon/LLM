@@ -18,6 +18,7 @@ class OrderItem extends Model
     ];
 
     public function scopeOwnHubItems($Q){ return $Q->whereIn('hub',Hub::ownHubs()->pluck('id')->all()); }
+    public function scopeUndelivered($Q){ return $Q->where('progress','!=','Delivered'); }
 
     public function Order(){ return $this->belongsTo(Order::class,'order','id'); }
     public function Item(){ return $this->belongsTo(Item::class,'item','id'); }

@@ -14,7 +14,6 @@
             LLMEvents\EmployeeCreated::class => Listeners\AddUserToGroups::class,
             LLMEvents\NewDefaultShelf::class => Listeners\DeleteAllDefaultShelfOfAHub::class,
             LLMEvents\HubShiftUpdated::class => Listeners\UpdateShiftItemsHub::class,
-//            LLMEvents\EmployeeUpdated::class => Listeners\SetAssignDetailsForNewlyAddedTasks::class,
         ];
 
         public static function Register(){

@@ -2,7 +2,7 @@
 
     namespace Firumon\LLM\Events;
 
-use Firumon\LLM\Jobs\UpdateCompleteProgressOfOrderItem;
+use Firumon\LLM\Jobs\SetTasksAssignedAttributes;
 use Firumon\LLM\Model\OrderItemService;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -21,7 +21,7 @@ class OrderItemServiceUpdated
     {
         $changes = $orderItemService->getChanges();
         if(!empty($changes) && count($changes) === 1 && array_key_exists('updated_at',$changes)) {
-            UpdateCompleteProgressOfOrderItem::dispatch($orderItemService->oi);
+            SetTasksAssignedAttributes::dispatch($orderItemService->id,request()->user()->id);
         }
     }
 

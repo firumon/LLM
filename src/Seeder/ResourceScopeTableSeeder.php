@@ -38,7 +38,8 @@ class ResourceScopeTableSeeder extends Seeder
             ->create([	'id' => '2108120', 	'resource' => '2106123', 	'name' => 'InServiceJobs', 	'description' => 'Jobs which are started but not finished', 	'method' => 'inService', 											])
             ->create([	'id' => '2108121', 	'resource' => '2106123', 	'name' => 'CompletedJobs', 	'description' => 'Jobs which are finished', 	'method' => 'completed', 											])
             ->create([	'id' => '2108122', 	'resource' => '2106118', 	'name' => 'DeliverableOrders', 	'description' => 'Orders which are deliverable', 	'method' => 'deliverable', 											])
-            ->create([	'id' => '2108123', 	'resource' => '2106120', 	'name' => 'TaskAssignableServices', 	'description' => 'Order Item Servoces which are available to assign', 	'method' => 'assignable', 											])
+            ->create([	'id' => '2108123', 	'resource' => '2106120', 	'name' => 'TaskAssignableServices', 	'description' => 'Order Item Services which are available to assign', 	'method' => 'assignable', 											])
+            ->create([	'id' => '2108124', 	'resource' => '2106119', 	'name' => 'UndeliveredOrderItems', 	'description' => 'Order items which are undelivered', 	'method' => 'undelivered', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

@@ -42,7 +42,7 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133124', 	'resource' => '2106113', 	'name' => 'ShelfListAction', 		'title' => 'Shelves', 		'menu' => 'Shelves', 									])
             ->create([	'id' => '2133125', 	'resource' => '2106115', 	'name' => 'PriceListAction', 		'title' => 'Price List', 		'menu' => 'Price List', 									])
             ->create([	'id' => '2133126', 	'resource' => '2106117', 	'name' => 'LabelListAction', 		'title' => 'Identity Labels', 		'menu' => 'Identity Labels', 									])
-            ->create([	'id' => '2133127', 	'resource' => '2106118', 	'name' => 'OrderListAction', 		'title' => 'Orders', 		'menu' => 'Orders', 									])
+            ->create([	'id' => '2133127', 	'resource' => '2106118', 	'name' => 'OrderListAction', 		'title' => 'Orders', 		'menu' => 'All Orders', 									])
             ->create([	'id' => '2133128', 	'resource' => '2106121', 	'name' => 'InvoiceListAction', 		'title' => 'Invoices', 		'menu' => 'Invoices', 									])
             ->create([	'id' => '2133129', 	'resource' => '2106124', 	'name' => 'ReceiptListAction', 		'title' => 'Receipts', 		'menu' => 'Receipts', 									])
             ->create([	'id' => '2133130', 	'resource' => '2106125', 	'name' => 'DeliveryListAction', 		'title' => 'Deliveries', 		'menu' => 'Deliveries', 									])
@@ -110,6 +110,7 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133192', 	'resource' => '2106123', 	'name' => 'OwnCompletedJobsListAction', 				'menu' => 'My Completed Jobs', 									])
             ->create([	'id' => '2133193', 	'resource' => '2106123', 	'name' => 'StartJobAction', 		'title' => 'Update Start Time', 											])
             ->create([	'id' => '2133194', 	'resource' => '2106123', 	'name' => 'FinishJobAction', 		'title' => 'Update Finish Time', 											])
+            ->create([	'id' => '2133195', 	'resource' => '2106118', 	'name' => 'UndeliveredOrders', 				'menu' => 'Undelivered', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
