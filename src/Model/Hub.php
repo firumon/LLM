@@ -2,18 +2,8 @@
 
 namespace Firumon\LLM\Model;
 
-use Illuminate\Database\Eloquent\Builder;
-
 class Hub extends Model
 {
-    protected static function boot(){
-        parent::boot();
-        static::addGlobalScope('Own',function(Builder $builder){
-
-        });
-
-    }
-
     protected $table = 'hubs';
 
     public function Users(){ return $this->belongsToMany(LLMUser::class,'hub_users', 'hub','user')->withTimestamps(); }

@@ -32,11 +32,16 @@ class LLMServiceProvider extends ServiceProvider
     private function getFullPath($folder){ return implode('/',[$this->stripSlashes($this->getRootPath()),$this->stripSlashes($folder),""]); }
     private function getProjectMigrationPath(){ return $this->getFullPath('migrations'); }
     private function getProjectConfigFilePath($file){ return $this->getFullPath('config') . $file; }
-//    private function getProjectRoutesPath(){ return $this->getFullPath('routes'); }
+    private function getProjectRoutesPath($file){ return $this->getFullPath('routes') . $file; }
 
     private function loadMigrations(){
         $source = $this->getProjectMigrationPath();
         $this->loadMigrationsFrom($source);
+    }
+
+    private function loadRoutes(){
+        $source = $this->getProjectRoutesPath('web.php');
+        $this->loadRoutesFrom($source);
     }
 
     private function registerEvents(){

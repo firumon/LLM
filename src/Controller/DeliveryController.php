@@ -2,6 +2,8 @@
 
 namespace Firumon\LLM\Controller;
 
+use Firumon\LLM\Model\Delivery;
+
 class DeliveryController extends Controller
 {
 
@@ -10,5 +12,10 @@ class DeliveryController extends Controller
         $balance = $invoice->Items->sum('price') - $invoice->Receipts->sum('amount');
         $this->setDependValue($form_id,'amount',$balance);
     }
+
+    public function apiList(){
+        return Delivery::own()->get();
+    }
+
 
 }

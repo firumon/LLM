@@ -9,4 +9,7 @@ class InvoiceItem extends Model
     public function Invoice(){ return $this->belongsTo(Invoice::class,'invoice','id'); }
     public function Item(){ return $this->belongsTo(Item::class,'item','id'); }
     public function Service(){ return $this->belongsTo(Service::class,'service','id'); }
+
+    protected $appends = ['total'];
+    public function getTotalAttribute(){ return $this->price * $this->quantity; }
 }

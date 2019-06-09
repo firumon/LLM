@@ -40,6 +40,10 @@ class ResourceScopeTableSeeder extends Seeder
             ->create([	'id' => '2108122', 	'resource' => '2106118', 	'name' => 'DeliverableOrders', 	'description' => 'Orders which are deliverable', 	'method' => 'deliverable', 											])
             ->create([	'id' => '2108123', 	'resource' => '2106120', 	'name' => 'TaskAssignableServices', 	'description' => 'Order Item Services which are available to assign', 	'method' => 'assignable', 											])
             ->create([	'id' => '2108124', 	'resource' => '2106119', 	'name' => 'UndeliveredOrderItems', 	'description' => 'Order items which are undelivered', 	'method' => 'undelivered', 											])
+            ->create([	'id' => '2108125', 	'resource' => '2106121', 	'name' => 'OwnInvoices', 	'description' => 'Invoices which of orders created in the hub assigned to requester', 	'method' => 'own', 											])
+            ->create([	'id' => '2108126', 	'resource' => '2106124', 	'name' => 'OwnReceipts', 	'description' => 'Receipts which of own invoices', 	'method' => 'own', 											])
+            ->create([	'id' => '2108127', 	'resource' => '2106125', 	'name' => 'OwnDeliveries', 	'description' => 'Deliveries which are of own hubs', 	'method' => 'own', 											])
+            ->create([	'id' => '2108128', 	'resource' => '2106127', 	'name' => 'OwnShift', 	'description' => 'Shifts where either source or target hub assigned to assigner', 	'method' => 'own', 											])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

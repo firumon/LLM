@@ -16,6 +16,8 @@ class HubShift extends Model
 
     protected $dispatchesEvents = ['updated' => HubShiftUpdated::class];
 
+    public function scopeOwn($Q){ $Q->whereHas('Source',function($Q){ $Q->ownHubs(); })->orWhereHas('Target',function($Q){ $Q->ownHubs(); }); }
+
     public function Source(){ return $this->belongsTo(Hub::class,'source_hub','id'); }
     public function Target(){ return $this->belongsTo(Hub::class,'destination_hub','id'); }
     public function Items(){ return $this->hasMany(HubShiftItem::class,'hs','id'); }

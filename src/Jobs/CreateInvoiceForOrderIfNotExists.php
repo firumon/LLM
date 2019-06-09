@@ -55,10 +55,10 @@ class CreateInvoiceForOrderIfNotExists implements ShouldQueue
         $items = $this->data['items']; if(empty($items)) return;
         $plContents = $this->getGroupedPLContents($this->data['pl']);
         foreach ($items as $ISArray){
-            $item = $ISArray['item']; $services = $ISArray['service'];
+            $item = $ISArray['item']; $services = $ISArray['service']; $quantity = $ISArray['quantity'] ?: 1;
             if(!empty($services)) foreach ($services as $service){
                 $price = Arr::get($plContents,join('.',[$item,$service,0,'price']),0);
-                $this->createInvoiceItem($invoice,compact('item','service','price'));
+                $this->createInvoiceItem($invoice,compact('item','service','price','quantity'));
             }
         }
     }

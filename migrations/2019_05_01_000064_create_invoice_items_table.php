@@ -20,6 +20,7 @@ class CreateInvoiceItemsTable extends Migration
             $table->foreignNullable('service', 'services');
             $table->foreignNullable('ois', 'order_item_services');
             $table->float('price', 9,2)->nullable()->default(0);
+            $table->unsignedSmallInteger('quantity')->default('1');
             $table->audit();
         });
     }

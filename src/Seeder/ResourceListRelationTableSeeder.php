@@ -84,6 +84,17 @@ class ResourceListRelationTableSeeder extends Seeder
             ->create([	'id' => '2125166', 	'resource_list' => '2123144', 	'relation' => '2109154', 													])
             ->create([	'id' => '2125167', 	'resource_list' => '2123144', 	'relation' => '2109153', 													])
             ->create([	'id' => '2125168', 	'resource_list' => '2123144', 	'relation' => '2109188', 													])
+            ->create([	'id' => '2125169', 	'resource_list' => '2123145', 	'relation' => '2109162', 													])
+            ->create([	'id' => '2125170', 	'resource_list' => '2123145', 	'relation' => '2109161', 													])
+            ->create([	'id' => '2125171', 	'resource_list' => '2123146', 	'relation' => '2109162', 													])
+            ->create([	'id' => '2125172', 	'resource_list' => '2123146', 	'relation' => '2109161', 													])
+            ->create([	'id' => '2125173', 	'resource_list' => '2123147', 	'relation' => '2109162', 													])
+            ->create([	'id' => '2125174', 	'resource_list' => '2123147', 	'relation' => '2109161', 													])
+            ->create([	'id' => '2125175', 	'resource_list' => '2123148', 	'relation' => '2109170', 	'nest_relation1' => '2109162', 												])
+            ->create([	'id' => '2125176', 	'resource_list' => '2123149', 	'relation' => '2109171', 													])
+            ->create([	'id' => '2125177', 	'resource_list' => '2123149', 	'relation' => '2109172', 													])
+            ->create([	'id' => '2125178', 	'resource_list' => '2123150', 	'relation' => '2109177', 													])
+            ->create([	'id' => '2125179', 	'resource_list' => '2123150', 	'relation' => '2109178', 													])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

@@ -17,6 +17,8 @@ class Receipt extends Model
         });
     }
 
+    public function scopeOwn($Q){ $Q->whereHas('Invoice',function($Q){ return $Q->own(); }); }
+
     protected $touches = ['Invoice'];
 
     public function Invoice(){ return $this->belongsTo(Invoice::class, 'invoice', 'id'); }

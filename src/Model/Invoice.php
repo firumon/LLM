@@ -21,10 +21,11 @@ class Invoice extends Model
 
     public function scopePending($Q){ return $Q->where('progress',"!=",'Paid'); }
     public function scopePaid($Q){ return $Q->where('progress','Paid'); }
+    public function scopeOwn($Q){ return $Q->whereHas('Order',function($Q){ return $Q->ownHub(); }); }
 
     protected $appends = ['total','name','paid'];
 
-    public function getTotalAttribute(){ return $this->Items->sum('price'); }
+    public function getTotalAttribute(){ return $this->Items->sum(function($item){ return $item->price * $item->quantity; }); }
     public function getPaidAttribute(){ return $this->Receipts->sum('amount'); }
     public function getNameAttribute(){ return implode('/',[$this->id,$this->Customer->name,$this->order,$this->date]); }
 

@@ -60,6 +60,12 @@ class ResourceListTableSeeder extends Seeder
             ->create([	'id' => '2123142', 	'resource' => '2106120', 	'name' => 'OwnHubAssignableOISList', 		'title' => 'Item Services', 	'identity' => 'name', 	'items_per_page' => '30', 									])
             ->create([	'id' => '2123143', 	'resource' => '2106118', 	'name' => 'UndeliveredOwnHubOrders', 		'title' => 'Orders', 	'identity' => 'name', 	'items_per_page' => '100', 									])
             ->create([	'id' => '2123144', 	'resource' => '2106119', 	'name' => 'UndeliveredOwnHubOrderItems', 		'title' => 'Order Items', 	'identity' => 'name', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123145', 	'resource' => '2106121', 	'name' => 'OwnInvoiceList', 		'title' => 'Invoices', 	'identity' => 'id', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123146', 	'resource' => '2106121', 	'name' => 'OwnUnPaidInvoices', 		'title' => 'Unpaid Invoices', 	'identity' => 'id', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123147', 	'resource' => '2106121', 	'name' => 'OwnPaidInvoices', 		'title' => 'Paid Invoices', 	'identity' => 'id', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123148', 	'resource' => '2106124', 	'name' => 'OwnReceipts', 		'title' => 'Receipts', 	'identity' => 'id', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123149', 	'resource' => '2106125', 	'name' => 'OwnDeliveries', 		'title' => 'Deliveries', 	'identity' => 'id', 	'items_per_page' => '100', 									])
+            ->create([	'id' => '2123150', 	'resource' => '2106127', 	'name' => 'OwnHubShifts', 		'title' => 'Deliveries', 	'identity' => 'id', 	'items_per_page' => '30', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

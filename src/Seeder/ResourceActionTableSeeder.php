@@ -111,6 +111,12 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133193', 	'resource' => '2106123', 	'name' => 'StartJobAction', 		'title' => 'Update Start Time', 											])
             ->create([	'id' => '2133194', 	'resource' => '2106123', 	'name' => 'FinishJobAction', 		'title' => 'Update Finish Time', 											])
             ->create([	'id' => '2133195', 	'resource' => '2106118', 	'name' => 'UndeliveredOrders', 				'menu' => 'Undelivered', 									])
+            ->create([	'id' => '2133196', 	'resource' => '2106121', 	'name' => 'OwnInvoices', 				'menu' => 'All Invoices', 									])
+            ->create([	'id' => '2133197', 	'resource' => '2106121', 	'name' => 'OwnUnpaidInvoices', 				'menu' => 'Unpaid', 									])
+            ->create([	'id' => '2133198', 	'resource' => '2106121', 	'name' => 'OwnPaidInvoices', 				'menu' => 'Paid', 									])
+            ->create([	'id' => '2133199', 	'resource' => '2106124', 	'name' => 'OwnReceiptsAction', 		'title' => 'Receipts', 		'menu' => 'Receipts', 									])
+            ->create([	'id' => '2133200', 	'resource' => '2106125', 	'name' => 'OwnDeliveries', 		'title' => 'Deliveries', 		'menu' => 'Deliveries', 									])
+            ->create([	'id' => '2133201', 	'resource' => '2106127', 	'name' => 'OwnHubShifts', 		'title' => 'Hub Shifts', 		'menu' => 'Hub Shifts', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

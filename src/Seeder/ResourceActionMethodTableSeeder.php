@@ -111,6 +111,12 @@ class ResourceActionMethodTableSeeder extends Seeder
             ->create([	'id' => '2134193', 	'resource_action' => '2133193', 	'type' => 'FormWithData', 	'idn1' => '2110128', 	'idn2' => '2128113', 											])
             ->create([	'id' => '2134194', 	'resource_action' => '2133194', 	'type' => 'FormWithData', 	'idn1' => '2110129', 	'idn2' => '2128113', 											])
             ->create([	'id' => '2134195', 	'resource_action' => '2133195', 	'type' => 'List', 	'idn1' => '2123143', 												])
+            ->create([	'id' => '2134196', 	'resource_action' => '2133196', 	'type' => 'List', 	'idn1' => '2123145', 												])
+            ->create([	'id' => '2134197', 	'resource_action' => '2133197', 	'type' => 'List', 	'idn1' => '2123146', 												])
+            ->create([	'id' => '2134198', 	'resource_action' => '2133198', 	'type' => 'List', 	'idn1' => '2123147', 												])
+            ->create([	'id' => '2134199', 	'resource_action' => '2133199', 	'type' => 'List', 	'idn1' => '2123148', 												])
+            ->create([	'id' => '2134200', 	'resource_action' => '2133200', 	'type' => 'List', 	'idn1' => '2123149', 												])
+            ->create([	'id' => '2134201', 	'resource_action' => '2133201', 	'type' => 'List', 	'idn1' => '2123150', 												])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

@@ -13,4 +13,6 @@ class Delivery extends Model
     public function Items(){ return $this->hasMany(DeliveryItem::class,'delivery','id'); }
 
     protected $dispatchesEvents = ['created' => DeliveryCreated::class];
+
+    public function scopeOwn($Q){ $Q->whereHas('Hub',function($Q){ $Q->ownHubs(); }); }
 }
