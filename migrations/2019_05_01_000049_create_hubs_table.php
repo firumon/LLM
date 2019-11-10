@@ -15,12 +15,13 @@ class CreateHubsTable extends Migration
     {
         Schema::create('hubs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 128)->index();
-            $table->string('address', 1024)->nullable();
-            $table->string('image', 512)->nullable();
-            $table->string('phone', 64)->nullable();
-            $table->string('email', 256)->nullable();
-            $table->string('website', 512)->nullable();
+            $table->string('name', '128')->index();
+            $table->string('address', '1024')->nullable();
+            $table->string('phone', '64')->nullable();
+            $table->string('email', '256')->nullable();
+            $table->string('website', '512')->nullable();
+            $table->unsignedSmallInteger('pin')->nullable();
+            $table->string('url', '64')->nullable();
             $table->enum('status', ['Active','Inactive'])->nullable()->default('Active');
             $table->audit();
         });
