@@ -33,7 +33,7 @@ class ResourceFormFieldDataTableSeeder extends Seeder
             ->create([	'id' => '2112115', 	'form_field' => '2111115', 	'attribute' => 'phone', 													])
             ->create([	'id' => '2112116', 	'form_field' => '2111116', 	'attribute' => 'status', 													])
             ->create([	'id' => '2112117', 	'form_field' => '2111117', 	'attribute' => 'address', 													])
-            ->create([	'id' => '2112118', 	'form_field' => '2111118', 	'attribute' => 'image', 													])
+            ->create([	'id' => '2112118', 	'form_field' => '2111118', 	'attribute' => 'pin', 													])
             ->create([	'id' => '2112119', 	'form_field' => '2111119', 	'attribute' => 'email', 													])
             ->create([	'id' => '2112120', 	'form_field' => '2111120', 	'attribute' => 'website', 													])
             ->create([	'id' => '2112121', 	'form_field' => '2111121', 	'attribute' => 'name', 													])

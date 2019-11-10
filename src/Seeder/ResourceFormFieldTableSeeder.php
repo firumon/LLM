@@ -33,7 +33,7 @@ class ResourceFormFieldTableSeeder extends Seeder
             ->create([	'id' => '2111115', 	'resource_form' => '2110105', 	'name' => 'phone', 	'type' => 'text', 	'label' => 'Phone Number', 											])
             ->create([	'id' => '2111116', 	'resource_form' => '2110105', 	'name' => 'status', 	'type' => 'select', 	'label' => 'Status', 											])
             ->create([	'id' => '2111117', 	'resource_form' => '2110105', 	'name' => 'address', 	'type' => 'textarea', 	'label' => 'Address', 											])
-            ->create([	'id' => '2111118', 	'resource_form' => '2110105', 	'name' => 'image', 	'type' => 'file', 	'label' => 'Image', 											])
+            ->create([	'id' => '2111118', 	'resource_form' => '2110105', 	'name' => 'pin', 	'type' => 'text', 	'label' => 'Login PIN', 											])
             ->create([	'id' => '2111119', 	'resource_form' => '2110105', 	'name' => 'email', 	'type' => 'text', 	'label' => 'Email', 											])
             ->create([	'id' => '2111120', 	'resource_form' => '2110105', 	'name' => 'website', 	'type' => 'text', 	'label' => 'Website', 											])
             ->create([	'id' => '2111121', 	'resource_form' => '2110106', 	'name' => 'name', 	'type' => 'text', 	'label' => 'Service Name', 											])
