@@ -14,4 +14,5 @@ class Item extends Model
     public function Processing(){ return $this->hasManyThrough(OrderItemService::class,OrderItem::class,'item','oi','id','id')->where('progress','Processing'); }
     public function Awaiting(){ return $this->hasManyThrough(OrderItemService::class,OrderItem::class,'item','oi','id','id')->where('progress','Awaiting'); }
     public function ServicingUsers(){ return $this->hasManyThrough(OrderItemService::class,OrderItem::class,'item','oi','id','id')->with(['Users']); }
+    public function Images(){ return $this->hasOne(Image::class,'type_id', 'id')->where('type','Item'); }
 }

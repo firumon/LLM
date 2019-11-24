@@ -39,6 +39,7 @@ use Illuminate\Database\Seeder;
                 DeliveryItemTableSeeder::class,
                 HubShiftTableSeeder::class,
                 HubShiftItemTableSeeder::class,
+                ImageTableSeeder::class,
             ]);
         }
     }

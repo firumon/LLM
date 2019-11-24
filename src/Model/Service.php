@@ -14,4 +14,5 @@ class Service extends Model
     public function Assigned(){ return $this->hasMany(OrderItemService::class,'service','id')->where('progress','Assigned'); }
     public function Processing(){ return $this->hasMany(OrderItemService::class,'service','id')->where('progress','Processing'); }
     public function Awaiting(){ return $this->hasMany(OrderItemService::class,'service','id')->where('progress','Awaiting'); }
+    public function Images(){ return $this->hasOne(Image::class,'type_id', 'id')->where('type','Service'); }
 }

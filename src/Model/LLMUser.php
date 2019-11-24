@@ -19,4 +19,5 @@ class LLMUser extends AppframeUser
 
     protected $dispatchesEvents = [ 'created' => LLMUserCreated::class ];
     public function Hubs(){ return $this->belongsToMany(Hub::class,'hub_users','user','hub')->withTimestamps(); }
+    public function Images(){ return $this->hasOne(Image::class,'type_id', 'id')->where('type','User'); }
 }

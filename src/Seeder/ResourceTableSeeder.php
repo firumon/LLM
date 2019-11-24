@@ -44,6 +44,7 @@ class ResourceTableSeeder extends Seeder
             ->create([	'id' => '2106126', 	'name' => 'DeliveryItem', 	'description' => 'Each item of a delivery', 	'title' => 'Delivery Items', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'delivery_items', 										])
             ->create([	'id' => '2106127', 	'name' => 'HubShift', 	'description' => 'Shifting of order items from one hub to another', 	'title' => 'Hub Shift', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'hub_shift', 	'controller' => 'HubShiftController', 	'controller_namespace' => 'Firumon\LLM\Controller', 								])
             ->create([	'id' => '2106128', 	'name' => 'HubShiftItem', 	'description' => 'Each items in a shift', 	'title' => 'Hub Shift Items', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'hub_shift_items', 										])
+            ->create([	'id' => '2106129', 	'name' => 'Image', 	'description' => 'Images of items in the application', 	'title' => 'Images', 	'namespace' => 'Firumon\LLM\Model', 	'table' => 'images', 	'controller' => 'ImageController', 	'controller_namespace' => 'Firumon\LLM\Controller', 								])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

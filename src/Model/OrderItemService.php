@@ -3,6 +3,7 @@
 namespace Firumon\LLM\Model;
 
 use Firumon\LLM\Events\OrderItemServiceUpdated;
+use Illuminate\Support\Arr;
 
 class OrderItemService extends Model
 {
@@ -20,5 +21,5 @@ class OrderItemService extends Model
     protected $with = ['OrderItem','Service'];
     protected $appends = ['name','mine'];
     public function getNameAttribute(){ return "{$this->OrderItem->name}/{$this->Service->name}"; }
-    public function getMineAttribute(){ $user = request()->user()->id; return $this->Assigned()->where(compact('user'))->exists(); }
+    public function getMineAttribute(){ $user = Arr::get(request()->user(),'id',null); $this->Assigned()->where(compact('user'))->exists(); }
 }

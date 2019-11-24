@@ -115,6 +115,11 @@ class ResourceRelationTableSeeder extends Seeder
             ->create([	'id' => '2109197', 	'resource' => '2106104', 	'name' => 'EmployeeJobServices', 	'description' => 'The job services assigned to an provider', 	'method' => 'Tasks', 	'type' => 'belongsToMany', 	'relate_resource' => '2106120', 									])
             ->create([	'id' => '2109198', 	'resource' => '2106104', 	'name' => 'TaskList', 	'description' => 'The job details assigned to an provider', 	'method' => 'TaskList', 	'type' => 'hasMany', 	'relate_resource' => '2106123', 									])
             ->create([	'id' => '2109199', 	'resource' => '2106119', 	'name' => 'OrderItemDeliveryRecord', 	'description' => 'The record of delivery where this item belongs to', 	'method' => 'Delivery', 	'type' => 'hasOne', 	'relate_resource' => '2106126', 									])
+            ->create([	'id' => '2109200', 	'resource' => '2106107', 	'name' => 'HubImages', 	'description' => 'Images of a hub', 	'method' => 'Images', 	'type' => 'hasOne', 	'relate_resource' => '2106129', 									])
+            ->create([	'id' => '2109201', 	'resource' => '2106102', 	'name' => 'UserImages', 	'description' => 'Images of a user', 	'method' => 'Images', 	'type' => 'hasOne', 	'relate_resource' => '2106129', 									])
+            ->create([	'id' => '2109202', 	'resource' => '2106108', 	'name' => 'ServiceImages', 	'description' => 'Images of a service', 	'method' => 'Images', 	'type' => 'hasOne', 	'relate_resource' => '2106129', 									])
+            ->create([	'id' => '2109203', 	'resource' => '2106109', 	'name' => 'ItemImages', 	'description' => 'Images of a item', 	'method' => 'Images', 	'type' => 'hasOne', 	'relate_resource' => '2106129', 									])
+            ->create([	'id' => '2109204', 	'resource' => '2106104', 	'name' => 'EmployeeImages', 	'description' => 'Images of a employee', 	'method' => 'Images', 	'type' => 'hasOne', 	'relate_resource' => '2106129', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }

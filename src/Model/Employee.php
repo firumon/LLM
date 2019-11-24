@@ -33,6 +33,7 @@ class Employee extends LLMUser
     public function GroupsDisplayable(){ return $this->belongsToMany(Group::class,'__group_users','user','group')->employeeGroups(); }
     public function Tasks(){ return $this->belongsToMany(OrderItemService::class,'order_item_service_user','user','ois','id','id')->withTimestamps(); }
     public function TaskList(){ return $this->hasMany(OrderItemServiceUser::class,'user','id'); }
+    public function Images(){ return $this->hasOne(Image::class,'type_id', 'id')->where('type','User'); }
 
     protected $appends = ['name_and_services'];
     public function getNameAndServicesAttribute(){ return $this->name . (($this->Services && $this->Services->isNotempty()) ? (' -> ' . implode(',', $this->Services->pluck('name')->all())) : ''); }

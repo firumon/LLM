@@ -117,6 +117,8 @@ class ResourceActionTableSeeder extends Seeder
             ->create([	'id' => '2133199', 	'resource' => '2106124', 	'name' => 'OwnReceiptsAction', 		'title' => 'Receipts', 		'menu' => 'Receipts', 									])
             ->create([	'id' => '2133200', 	'resource' => '2106125', 	'name' => 'OwnDeliveries', 		'title' => 'Deliveries', 		'menu' => 'Deliveries', 									])
             ->create([	'id' => '2133201', 	'resource' => '2106127', 	'name' => 'OwnHubShifts', 		'title' => 'Hub Shifts', 		'menu' => 'Hub Shifts', 									])
+            ->create([	'id' => '2133202', 	'resource' => '2106107', 	'name' => 'HubPinUpdateAction', 		'title' => 'Update PIN', 											])
+            ->create([	'id' => '2133203', 	'resource' => '2106129', 	'name' => 'AddImageAction', 		'title' => 'Add Image', 		'menu' => 'Add', 									])
         ;
         \DB::statement('set foreign_key_checks = ' . $_);
     }
