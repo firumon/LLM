@@ -2,6 +2,7 @@
 
 namespace Firumon\LLM\Controller;
 
+use Firumon\LLM\Model\Employee;
 use Firumon\LLM\Model\Hub;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -23,8 +24,12 @@ class HubController extends Controller
     }
 
     public function apiProviders(Request $request){
-        $hub = Hub::with(['Users' => function($q){ $q->whereHas('Groups',function($Q){ $Q->where('name','service_providers'); }); }])->where(['url' => $request->uuid])->first();
-        return Arr::get($hub,'Users');
+//        $hub = Hub::with(['Users' => function($q){ $q->whereHas('Groups',function($Q){ $Q->where('name','service_providers'); }); }])->where(['url' => $request->uuid])->first();
+//        return Arr::get($hub,'Users');
+        return Employee::with('Services')
+            ->whereHas('Groups',function($Q){ $Q->where('name','service_providers'); })
+            ->whereHas('Hubs',function($Q){ $Q->where('url',request()->uuid); })
+            ->get();
     }
 
 }
